@@ -1,5 +1,7 @@
 <template>
-    <UserProfileComponent/>
+    <div class="card">
+        <UserProfileComponent />
+    </div>
 </template>
 
 <script>

@@ -60,6 +60,7 @@ height: 150px;
 nav{
   background-color:#474554;
   padding: 10px;
+  margin-bottom: 20px;
 }
 .navbar ul{
   margin: 0px;
