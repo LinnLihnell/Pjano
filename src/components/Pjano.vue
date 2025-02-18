@@ -1,5 +1,7 @@
 <script></script>
 
-<template></template>
+<template>
+  hej
+</template>
 
 <style></style>
