@@ -1,16 +1,13 @@
 <script>
-  import CitiesList from "./components/CitiesList.vue";
-  import HelloWorld from "./components/HelloWorld.vue";
+import HomeView from './views/HomeView.vue';
 
   export default {
     components: {
-      CitiesList,
-      HelloWorld
+     HomeView
     }
   };
 </script>
 
 <template>
-  <HelloWorld msg="Hello World!" />
-  <CitiesList />
+ <HomeView/>
 </template>
