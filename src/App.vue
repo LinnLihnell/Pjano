@@ -37,9 +37,12 @@ import HomeView from './views/HomeView.vue';
 
 </template>
 
-<style scoped>
+<style>
+body{
+background-image: linear-gradient(to right top, #ecc9dd, #d5b4d0, #bba0c5, #9e8eba, #7e7daf, #6686ba, #448ebf, #0096be, #00b5c0, #4ed1af, #a2e697, #f6f58b);;
+}
 section{
-background-color:#d9d9d9 ;
+/* background-color:#d9d9d9 ; */
 text-align: center;
 margin: 0;
 padding: 0;
@@ -59,11 +62,11 @@ nav{
   padding: 10px;
 }
 .navbar ul{
-  margin: 0;
+  margin: 0px;
   list-style-type: none;
-  display: flex;
-  padding: 0;
+  padding: 0px;
   overflow: hidden;
+  background-color: #474554;
 }
 .navbar a{
 text-decoration: none;
@@ -73,14 +76,18 @@ display: block;
 }
 
 .navbar a:hover {
-  background-color: blue;
+  background-color: green;
 }
 
+.navbar li {
+    float: left;
+  }
+
 footer{
-  background-color: #474554;
-  color: white;
+  /* background-color: #474554;
+  color: white; */
   text-align: center;
-  padding: 2px;
-  margin-top:10px;
+  /* padding: 2px;
+  margin-top:10px; */
 }
 </style>
