@@ -1,19 +1,13 @@
 <script>
-
 import { RouterLink, RouterView } from 'vue-router';
-import HomeView from './views/HomeView.vue';
 
-  export default {
-    components: {
-     HomeView
-    },
-    data(){
-    return{
+export default {
+  data() {
+    return {
       logga: '../assets/Pjanologga.png'
     }
-
   }
-  };
+};
 </script>
 
 <template>
@@ -21,59 +15,70 @@ import HomeView from './views/HomeView.vue';
     <img :src=logga alt="logo">
     <nav class="navbar">
       <ul>
-        <li><RouterLink to="/">Home</RouterLink></li>
-        <li> <RouterLink to="/profile">Profile</RouterLink></li>
+        <li>
+          <RouterLink to="/">Home</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/profile">Profile</RouterLink>
+        </li>
       </ul>
     </nav>
   </section>
 
-<main>
-  <RouterView/>
-</main>
+  <main>
+    <RouterView />
+  </main>
 
-<footer>
-  <p>Grupp 14&copy 2025</p>
-</footer>
+  <footer>
+    <p>Grupp 14&copy 2025</p>
+  </footer>
 
 </template>
 
 <style>
-body{
-background-image: linear-gradient(to right top, #ecc9dd, #d5b4d0, #bba0c5, #9e8eba, #7e7daf, #6686ba, #448ebf, #0096be, #00b5c0, #4ed1af, #a2e697, #f6f58b);;
+body {
+  background-image: linear-gradient(to right top, #ecc9dd, #d5b4d0, #bba0c5, #9e8eba, #7e7daf, #6686ba, #448ebf, #0096be, #00b5c0, #4ed1af, #a2e697, #f6f58b);
+  ;
 }
-section{
-/* background-color:#d9d9d9 ; */
-text-align: center;
-margin: 0;
-padding: 0;
-/* height: 100vh; */
-/* width: 980px */
-/* max-width: 100% */
+
+section {
+  /* background-color:#d9d9d9 ; */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  /* height: 100vh; */
+  /* width: 980px */
+  /* max-width: 100% */
 }
-main{
+
+main {
   width: 100vw;
   /* height: 100vh; */
 }
-img{
-height: 150px;
+
+img {
+  height: 150px;
 }
-nav{
-  background-color:#474554;
+
+nav {
+  background-color: #474554;
   padding: 10px;
   margin-bottom: 20px;
 }
-.navbar ul{
+
+.navbar ul {
   margin: 0px;
   list-style-type: none;
   padding: 0px;
   overflow: hidden;
   background-color: #474554;
 }
-.navbar a{
-text-decoration: none;
-color:white;
-margin: 5px;
-display: block;
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+  display: block;
 }
 
 .navbar a:hover {
@@ -81,10 +86,10 @@ display: block;
 }
 
 .navbar li {
-    float: left;
-  }
+  float: left;
+}
 
-footer{
+footer {
   /* background-color: #474554;
   color: white; */
   text-align: center;
