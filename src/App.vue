@@ -58,6 +58,7 @@ main {
 
 img {
   height: 150px;
+  border-radius: 50%;
 }
 
 nav {
