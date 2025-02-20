@@ -2,37 +2,64 @@
 export default{
   data(){
     return{questions:[
-      {question:"press key C",answer:"C"},
-      {question:"press key C#",answer:"C#"},
-      {question:"press key D",answer:"D"},
-      {question:"press key D#",answer:"D#"},
-      {question:"press key E",answer:"E"},
-      {question:"press key F",answer:"F"},
-      {question:"press key F#",answer:"F#"},
-      {question:"press key G",answer:"G"},
-      {question:"press key G#",answer:"G#"},
-      {question:"press key A",answer:"A"},
-      {question:"press key A#",answer:"A#"},
-      {question:"press key B",answer:"B"},]}
+      {question:"Press key C",answer:"C"},
+      {question:"Press key C#",answer:"C#"},
+      {question:"Press key D",answer:"D"},
+      {question:"Press key D#",answer:"D#"},
+      {question:"Press key E",answer:"E"},
+      {question:"Press key F",answer:"F"},
+      {question:"Press key F#",answer:"F#"},
+      {question:"Press key G",answer:"G"},
+      {question:"Press key G#",answer:"G#"},
+      {question:"Press key A",answer:"A"},
+      {question:"Press key A#",answer:"A#"},
+      {question:"Press key B",answer:"B"},],
+      showQuestion: 'Question',
+      i: 0
+}
+  },
+  created(){
+    // this.oneQuestion = this.questions[4].question
   },
   methods:{
-    shuffleQuestion(array){
-      for(let i = array -1; i > 0; i--){
-      let random = Math.floor(Math.random()* i)
-      let temp = array[i]
-      vue.set(array, i, array[random])
-      vue.set(array, random, temp);
-      }
+    nextQuestion(){
+        if(this.i < this.questions.length){
+          this.showQuestion = this.questions[this.i].question
+        this.i++
+        }
+        else {
+          this.showQuestion = 'Done'
+        }
+
     }
   }
 }
+
 
 </script>
 
 
 <template>
-<p>{{ questions }}</p>
+  <div class="questionContainer">
+<p>{{ showQuestion }}</p>
+<button @click="nextQuestion()">Next Question</button>
+</div>
 </template>
 
 
-<style></style>
+<style scoped>
+
+.questionContainer{
+  background-color: #474554;
+  color: white;
+  width: 15rem;
+}
+p {
+  text-align: center;
+  padding: 10px;
+}
+button{
+background-color: #4745541f;
+color: white;
+}
+</style>
