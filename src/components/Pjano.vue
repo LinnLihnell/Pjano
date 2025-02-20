@@ -38,7 +38,7 @@ export default{
     <div class="key white" @click="playTone('D')"></div>
     <div class="key black" @click="playTone('D#')"></div>
     <div class="key white" @click="playTone('E')"></div>
-    <div class="key white" @click="playTone('F')"></div>
+    <div class="key white" style="margin-left: 0;" @click="playTone('F')"></div>
     <div class="key black" @click="playTone('F#')"></div>
     <div class="key white" @click="playTone('G')"></div>
     <div class="key black" @click="playTone('G#')"></div>
@@ -60,12 +60,15 @@ export default{
   border: 1px solid #000;
   box-sizing: border-box;
   cursor:pointer;
+  margin-left: -15px;
 }
 .white{
   background-color: #fff;
   z-index: 1;
   margin: 0px;
+  margin-left: -15px;
 }
+
 .black{
   background-color: #000;
   width: 30px;
