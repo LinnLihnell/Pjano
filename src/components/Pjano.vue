@@ -48,15 +48,7 @@ export default{
   </div>
 </template>
 
-<style>
-body{
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-  margin: 0;
-}
+<style scoped>
 #piano{
   display: flex;
   position: relative;

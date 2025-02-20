@@ -37,6 +37,11 @@ export default {
 
 <style>
 body {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
   background-image: linear-gradient(to right top, #ecc9dd, #d5b4d0, #bba0c5, #9e8eba, #7e7daf, #6686ba, #448ebf, #0096be, #00b5c0, #4ed1af, #a2e697, #f6f58b);
   ;
 }
@@ -63,8 +68,6 @@ img {
 
 nav {
   background-color: #474554;
-  padding: 10px;
-  margin-bottom: 20px;
 }
 
 .navbar ul {
@@ -80,15 +83,18 @@ nav {
   text-align: center;
   color: white;
   margin: 5px;
+  padding: 8px;
   display: block;
 }
 
-.navbar a:hover {
-  background-color: green;
+.navbar li:hover {
+  background-color: blue;
+
 }
 
 .navbar li {
   float: left;
+  display: inline;
 }
 
 
