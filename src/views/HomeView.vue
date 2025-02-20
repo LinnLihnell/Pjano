@@ -6,7 +6,7 @@ import Questions from '../components/Questions.vue';
 export default{
   components: {
     Pjano,
-    Questions, 
+    Questions,
 
   },
 
@@ -15,7 +15,6 @@ export default{
 </script>
 
 <template>
-<h1>Home</h1>
 <Questions />
 <Pjano />
 </template>

@@ -53,6 +53,8 @@ export default{
   background-color: #474554;
   color: white;
   width: 15rem;
+  margin: auto;
+  margin-bottom: 10px;
 }
 p {
   text-align: center;
