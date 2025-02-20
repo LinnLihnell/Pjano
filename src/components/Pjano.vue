@@ -3,18 +3,18 @@ export default{
   data(){
     return {
       keys: [
-      {pianoKey: 'C'},
-      {pianoKey: 'C#'},
-      {pianoKey: 'D'},
-      {pianoKey: 'D#'},
-      {pianoKey: 'E'},
-      {pianoKey: 'F'},
-      {pianoKey: 'F#'},
-      {pianoKey: 'G'},
-      {pianoKey: 'G#'},
-      {pianoKey: 'A'},
-      {pianoKey: 'A#'},
-      {pianoKey: 'B'}]
+      {pianoKey: 'C', sound: '../assets/sounds/C3.mp3'},
+      {pianoKey: 'C#', sound: '../assets/sounds/Csharp3.mp3'},
+      {pianoKey: 'D', sound: '../assets/sounds/D3.mp3'},
+      {pianoKey: 'D#', sound: '../assets/sounds/Dsharp3.mp3'},
+      {pianoKey: 'E', sound: '../assets/sounds/E3.mp3'},
+      {pianoKey: 'F', sound: '../assets/sounds/F3.mp3'},
+      {pianoKey: 'F#', sound: '../assets/sounds/Fsharp3.mp3'},
+      {pianoKey: 'G', sound: '../assets/sounds/G3.mp3'},
+      {pianoKey: 'G#', sound: '../assets/sounds/Gsharp3.mp3'},
+      {pianoKey: 'A', sound: '../assets/sounds/A3.mp3'},
+      {pianoKey: 'A#', sound: '../assets/sounds/Asharp3.mp3'},
+      {pianoKey: 'B', sound: '../assets/sounds/B3.mp3'}]
     }
   },
 
@@ -22,7 +22,7 @@ export default{
     playTone(value){
       let output = this.keys.filter(keys => keys.pianoKey == value);
       for (let i = 0; i < output.length; i++){
-        let audio = new Audio('../assets/sounds/test.mp3')
+        let audio = new Audio(output[i].sound)
         audio.play()
         console.log(output[i].pianoKey)
       }
