@@ -88,7 +88,7 @@ nav {
 }
 
 .navbar li:hover {
-  background-color: blue;
+  background-color: black;
 
 }
 
