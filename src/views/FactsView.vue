@@ -9,11 +9,11 @@ export default{
 
         {header:"Learning About Octaves", text:"This spacing of 12 half steps (includes white and black notes) on the keyboard is called an Octave", picture: '../assets/pianoimg/piano3.png'},
 
-        {header:"Learning About Black Keys", text:"The notes on a piano are divided into Half Steps. Any time you are moving from one key to the next (which includes the black keys), you are moving 1 half step.", picture: ''},
+        {header:"Learning About Black Keys", text:"The notes on a piano are divided into Half Steps. Any time you are moving from one key to the next (which includes the black keys), you are moving 1 half step.", picture: '../assets/pianoimg/piano4.png'},
 
-        {header:"Learning About Sharps", text:"The word Sharp is like shorthand in typing. It's a short hand way of saying that you are to move 1 half step up the keyboard.", picture: ''},
+        {header:"Learning About Sharps", text:"The word Sharp is like shorthand in typing. It's a short hand way of saying that you are to move 1 half step up the keyboard. The symbol is #", picture: '../assets/pianoimg/piano5.png'},
 
-        {header:"Learning About Flats", text:"The word Flat is also like short hand in typing. It's a short hand way of saying that you are to move 1 half step down the keyboard.", picture: ''}
+        {header:"Learning About Flats", text:"The word Flat is also like short hand in typing. It's a short hand way of saying that you are to move 1 half step down the keyboard. The symbol is b", picture: '../assets/pianoimg/piano6.png'}
       ]
     }
   }
