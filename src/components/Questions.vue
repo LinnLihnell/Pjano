@@ -14,6 +14,16 @@ export default{
       {question:"press key A",answer:"A"},
       {question:"press key A#",answer:"A#"},
       {question:"press key B",answer:"B"},]}
+  },
+  methods:{
+    shuffleQuestion(array){
+      for(let i = array -1; i > 0; i--){
+      let random = Math.floor(Math.random()* i)
+      let temp = array[i]
+      vue.set(array, i, array[random])
+      vue.set(array, random, temp);
+      }
+    }
   }
 }
 
@@ -21,7 +31,7 @@ export default{
 
 
 <template>
-<p v-for="x in questions.question"></p>
+<p>{{ questions }}</p>
 </template>
 
 
