@@ -77,6 +77,7 @@ nav {
 
 .navbar a {
   text-decoration: none;
+  text-align: center;
   color: white;
   margin: 5px;
   display: block;
@@ -90,11 +91,18 @@ nav {
   float: left;
 }
 
+
+
 footer {
   /* background-color: #474554;
   color: white; */
   text-align: center;
   /* padding: 2px;
   margin-top:10px; */
+}
+
+#piano {
+  display: flex;
+  justify-content: center;
 }
 </style>
