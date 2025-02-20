@@ -22,6 +22,7 @@ export default{
     methods: {
         saveUserProfile(){
             localStorage.setItem('userName', this.formUserName)
+            this.displayUserName = this.formUserName;
         }
     },
     created(){
