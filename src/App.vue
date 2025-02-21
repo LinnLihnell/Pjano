@@ -21,6 +21,9 @@ export default {
         <li>
           <RouterLink to="/profile">Profile</RouterLink>
         </li>
+        <li>
+          <RouterLink to="/facts">Facts</RouterLink>
+        </li>
       </ul>
     </nav>
   </section>
