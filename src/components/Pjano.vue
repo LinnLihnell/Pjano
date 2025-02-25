@@ -1,5 +1,9 @@
 <script>
+// import Play from './Play.vue';
 export default {
+  // components:{
+  //   Play
+  // },
   data() {
     return {
       keys: [
@@ -24,6 +28,7 @@ export default {
       let audio = new Audio(output.sound)
       audio.play()
       console.log(output.pianoKey)
+      this.$emit('playTone',value)
     },
   }
 }

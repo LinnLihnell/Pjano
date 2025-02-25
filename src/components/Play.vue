@@ -11,33 +11,28 @@ export default{
 
   },
 
-  emits:{
-    click: null,
-
-    submit:({ pianoKey, answer }) => {
-      if (pianoKey && answer){
-        return true
-      } else{
-        console.log("fel")
-        return false
-      }
+  data(){
+    return{
+      clickedNote : {}
     }
-
-
   },
   methods:{
-    submitAnswer(pianoKey,answer){
-      this.$emit('submit', {pianoKey, answer})
+    emittedTone(value){
+      this.clickedNote.push(value)
+    console.log("du tryckte på:")}
+  },
+  rightWrongAnswer(clickedNote){
+      if(this.question === this.answer){
+      console.log(clickedNote)
     }
-  }
-
+}
 }
 
 </script>
 
 <template>
   hej
-  <Pjano/>
+  <Pjano @playTone="emittedTone"/>
   <Questions/>
   <Info/>
 </template>
