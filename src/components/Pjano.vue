@@ -72,4 +72,6 @@ export default {
   height: 120px;
   z-index: 2
 }
+
+
 </style>
