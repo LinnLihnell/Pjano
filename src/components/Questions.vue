@@ -31,7 +31,9 @@ export default{
           this.showQuestion = 'Done'
         }
 
-    }
+    },
+
+
   }
 }
 
@@ -42,6 +44,7 @@ export default{
 <template>
   <div class="questionContainer">
 <p>{{ showQuestion }}</p>
+<p>Du tryckte på: {{ answer }}</p>
 <button @click="nextQuestion()">Next Question</button>
 </div>
 </template>
