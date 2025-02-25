@@ -113,5 +113,19 @@ footer {
 #piano {
   display: flex;
   justify-content: center;
+} 
+@media(max-width: 1000px){
+ img{
+  display: none;
+ } 
+footer{
+  display: none;
+}
+body{
+  transform: rotate(90deg);
+}
+#piano{
+  margin-top: 100px;
+}
 }
 </style>
