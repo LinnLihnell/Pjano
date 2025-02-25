@@ -1,12 +1,13 @@
 <script>
 import Pjano from './Pjano.vue';
 import Questions from './Questions.vue';
-// import Info from './Info.vue';
+import Info from './Info.vue';
 
 export default{
   components: {
     Pjano,
-    Questions
+    Questions,
+    Info
 
   },
 
@@ -38,4 +39,5 @@ export default{
   hej
   <Pjano/>
   <Questions/>
+  <Info/>
 </template>
