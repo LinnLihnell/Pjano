@@ -64,10 +64,11 @@ main {
   /* height: 100vh; */
 }
 
-img {
+/* TODO: Don't have that broad image manipulation. This will effect all images on the site */
+/* img {
   height: 150px;
   border-radius: 50%;
-}
+} */
 
 nav {
   background-color: #474554;
@@ -113,19 +114,23 @@ footer {
 #piano {
   display: flex;
   justify-content: center;
-} 
-@media(max-width: 1000px){
- img{
-  display: none;
- } 
-footer{
-  display: none;
 }
-body{
+
+@media(max-width: 1000px) {
+  /* img {
+    display: none;
+  } */
+
+  footer {
+    display: none;
+  }
+
+  /* TODO: have closer to the component. This will effect everything  */
+  /* body{
   transform: rotate(90deg);
-}
-#piano{
-  margin-top: 100px;
-}
+} */
+  #piano {
+    margin-top: 100px;
+  }
 }
 </style>
