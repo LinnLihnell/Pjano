@@ -1,9 +1,9 @@
 <script>
-// import Play from './Play.vue';
+import Questions from './Questions.vue';
 export default {
-  // components:{
-  //   Play
-  // },
+  components:{
+    Questions
+  },
   data() {
     return {
       keys: [
@@ -18,7 +18,9 @@ export default {
         { pianoKey: 'G#', sound: '../assets/sounds/Gsharp3.mp3' },
         { pianoKey: 'A', sound: '../assets/sounds/A3.mp3' },
         { pianoKey: 'A#', sound: '../assets/sounds/Asharp3.mp3' },
-        { pianoKey: 'B', sound: '../assets/sounds/B3.mp3' }]
+        { pianoKey: 'B', sound: '../assets/sounds/B3.mp3' }],
+
+        currentQuestion: []
     }
   },
 
@@ -28,8 +30,13 @@ export default {
       let audio = new Audio(output.sound)
       audio.play()
       console.log(output.pianoKey)
-      this.$emit('playTone',value)
+      this.$emit('playTone', value)
     },
+    emittedQuestion(question){
+      this.currentQuestion.push(question)
+      console.log('fråga mottagen')
+    }
+
   }
 }
 </script>
