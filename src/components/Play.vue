@@ -11,11 +11,12 @@ export default{
 
   },
 
-  data(){
+   data(){
     return{
       clickedNote : {}
     }
   },
+
   methods:{
     emittedTone(value){
       this.clickedNote.push(value)
@@ -27,12 +28,10 @@ export default{
     }
 }
 }
-
 </script>
 
 <template>
   hej
   <Pjano @playTone="emittedTone"/>
   <Questions/>
-  <Info/>
 </template>
