@@ -24,7 +24,7 @@ export default{
 
   methods: {
     displayNone(){
-      this.showInfo = null
+      this.showInfo = false
     },
     nextFact(){
       if (this.currentIndex < this.facts.length -1){
@@ -54,8 +54,8 @@ export default{
       <p>{{ facts[currentIndex].text}}</p>
       <img :src="facts[currentIndex].picture" alt="Picture">
       <div id="navForBackward">
-        <BButton @click="previousFact" variant="secondary"><i class="bi bi-arrow-left"></i></BButton>
-        <BButton class="rightBtn" variant="secondary" @click="nextFact" ><i class="bi bi-arrow-right"></i></BButton>
+        <BButton @click="previousFact" variant="outline-secondary"><i class="bi bi-arrow-left"></i></BButton>
+        <BButton class="rightBtn" variant="outline-secondary" @click="nextFact" ><i class="bi bi-arrow-right"></i></BButton>
 
       </div>
     </div>
@@ -64,21 +64,21 @@ export default{
 
 <style scoped>
 #infoContainer {
-  display: flex;
+  position:absolute;
+  top: 0;
 }
 .infoBox{
   width: 30rem;
   background-color: white;
   border-radius: 10px;
   text-align: center;
-
+  box-shadow:4px 4px 4px ;
 }
 #navForBackward{
   display: flex;
 }
 .rightBtn{
   margin-left: auto;
- /* margin-right: 0px; */
 }
 .btn-close {
 display: block;
@@ -90,7 +90,5 @@ margin-bottom: 0;
 img {
   width: 70%;
   object-fit: cover;
-
-
 }
 </style>

@@ -46,4 +46,5 @@ export default{
 <template>
   <Pjano @playTone="emittedTone"/>
    <Question :chords="lesson" :feedback="answer"/>
+   <Info/>
 </template>
