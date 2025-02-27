@@ -1,13 +1,9 @@
 <script>
-<<<<<<< HEAD
-export default {
-=======
 import Questions from './Questions.vue';
 export default {
   components:{
     Questions
   },
->>>>>>> 24ad81fed993df3db3cf0e524b219ac87ddda18c
   data() {
     return {
       keys: [
