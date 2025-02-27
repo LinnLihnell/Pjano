@@ -17,7 +17,7 @@ export default{
 </script>
 
 <template>
-<Questions />
-<Pjano />
+<!-- <Questions /> -->
+<!-- <Pjano /> -->
 <Play/>
 </template>
