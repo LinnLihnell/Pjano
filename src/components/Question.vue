@@ -23,7 +23,7 @@ export default{
 
 <template>
 <div class="questionContainer">
-<p>{{}}</p>
+<p>Press {{}}</p>
 <p>{{}}</p>
 </div>
 </template>
