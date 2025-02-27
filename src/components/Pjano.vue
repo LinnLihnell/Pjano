@@ -57,7 +57,6 @@ export default {
     <div class="key black" @click="playTone('A#')"></div>
     <div class="key white" @click="playTone('B')"></div>
   </div>
-
 </template>
 
 <style scoped>

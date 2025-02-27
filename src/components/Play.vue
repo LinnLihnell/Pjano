@@ -15,34 +15,35 @@ export default{
    data(){
     return{
       clickedNote : [],
-      lesson: lessonsData.lessons[0]
-      // answer: [],
-      // result: null,
-      // questions: [],
-      // currentQuestion: {}
+      lesson: lessonsData.lessons[0].chords[0][0],
+      answer: ''
     }
   },
 
   created(){
     console.log(lessonsData)
-    console.log(lessonsData.lessons[3].chords[0])
+    console.log(lessonsData.lessons[0].chords[0])
   },
 
 
   methods:{
     emittedTone(value){
       this.clickedNote.push(value)
-    console.log("du tryckte på:", value)}
+    console.log("du tryckte på:", value)
+    if (value === this.lesson){
+      console.log("rätt")
+      this.answer = 'Bra jobbat'
+     } else {
+      console.log("fel")
+      this.answer = 'försök igen'
+     }
+  }
   },
-//   rightWrongAnswer(){
-//       this.answer.push(value)
 
-// }
 }
 </script>
 
 <template>
-  hej
   <Pjano @playTone="emittedTone"/>
-  <!-- <Questions @nextQuestion="currentQuestion"/> -->
+   <Question :chords="lesson" :feedback="answer"/>
 </template>

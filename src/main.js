@@ -7,4 +7,4 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-next/dist/bootstrap-vue-next.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
-createApp(App).use(router).mount("#app");
+createApp(App).use(router).use(createBootstrap()).mount("#app");

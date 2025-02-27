@@ -17,14 +17,24 @@ export default{
       // {question:"Press key B",Bkey:"11"},],
     }
   },
+  props:{
+    chords:{
+      type: String
+    },
+    feedback:{
+      type: String
+    }
+
+
+  }
 }
 </script>
 
 
 <template>
 <div class="questionContainer">
-<p>Press {{}}</p>
-<p>{{}}</p>
+<p>Press {{ chords }}</p>
+<p>{{ feedback }}</p>
 </div>
 </template>
 
