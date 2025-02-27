@@ -63,7 +63,7 @@ section {
 
 main {
   width: 100vw;
-  /* height: 100vh; */
+  /*height: 100vh*/
 }
 
 
@@ -75,7 +75,7 @@ main {
 nav {
   background-color: #474554;
 }
-@media(min-width: 1001px){
+@media(min-width: 501px){
 .navbar ul {
   margin: 0px;
   list-style-type: none;
@@ -103,8 +103,6 @@ nav {
   display: inline;
 }
 
-
-
 footer {
   /* background-color: #474554;
   color: white; */
@@ -119,8 +117,7 @@ footer {
 } 
 }
 
-
-@media(max-width: 1000px) {
+@media(max-width: 500px) {
 #logo {
   display: none;
 } 
@@ -129,11 +126,12 @@ footer {
 }
 body{
   transform: rotate(90deg);
-  max-width: 100vh;
 }
 .navbar ul {
   margin: 0px;
   list-style-type: none;
+  padding: 0px;
+  overflow: hidden;
 }
 }
 </style>
