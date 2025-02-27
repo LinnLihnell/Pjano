@@ -9,8 +9,9 @@ export default createRouter({
   history: createWebHashHistory(),
   routes: [
     {
+      name: 'Home',
       component: HomeView,
-      path: '/'
+      path: '/:id?' //Optional id parameter
     },
     {
       component: ProfileView,
