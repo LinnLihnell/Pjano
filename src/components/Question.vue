@@ -14,7 +14,7 @@ export default{
       // {question:"Press key G#",Gsharp:"8"},
       // {question:"Press key A",Akey:"9"},
       // {question:"Press key A#",Asharp:"10"},
-      // {question:"Press key B",Bkey:"11"},],  
+      // {question:"Press key B",Bkey:"11"},],
     }
   },
 }

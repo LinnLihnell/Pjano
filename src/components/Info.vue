@@ -1,4 +1,6 @@
 <script>
+import { BButton } from 'bootstrap-vue-next';
+
 export default{
   data (){
     return {
@@ -47,13 +49,14 @@ export default{
 <template>
   <div v-if="showInfo" id="infoContainer">
     <div class="infoBox">
-      <button @click="displayNone"  >X</button>
-
-      <p>{{ facts[currentIndex].header}}</p>
+      <BButton class="btn-close" @click="displayNone"></BButton>
+      <h3>{{ facts[currentIndex].header}}</h3>
+      <p>{{ facts[currentIndex].text}}</p>
       <img :src="facts[currentIndex].picture" alt="Picture">
       <div id="navForBackward">
-        <button @click="previousFact" id="back"><</button>
-        <button @click="nextFact" id="forward">></button>
+        <BButton @click="previousFact" variant="secondary"><i class="bi bi-arrow-left"></i></BButton>
+        <BButton class="rightBtn" variant="secondary" @click="nextFact" ><i class="bi bi-arrow-right"></i></BButton>
+
       </div>
     </div>
   </div>
@@ -67,18 +70,27 @@ export default{
   width: 30rem;
   background-color: white;
   border-radius: 10px;
+  text-align: center;
 
 }
-button {
-background-color: grey;
+#navForBackward{
+  display: flex;
+}
+.rightBtn{
+  margin-left: auto;
+ /* margin-right: 0px; */
+}
+.btn-close {
 display: block;
 margin-left: auto;
 margin-right: 5px;
 margin-top: 2px;
 margin-bottom: 0;
 }
-#navForBackward{
-  display: flex;
+img {
+  width: 70%;
+  object-fit: cover;
+
 
 }
 </style>

@@ -1,13 +1,13 @@
 <script>
 import Pjano from './Pjano.vue';
-import Questions from './Questions.vue';
+import Question from './Question.vue';
 import Info from './Info.vue';
 import lessonsData from '../../assets/Lessones.json';
 
 export default{
   components: {
     Pjano,
-    Questions,
+    Question,
     Info
 
   },
@@ -25,6 +25,7 @@ export default{
 
   created(){
     console.log(lessonsData)
+    console.log(lessonsData.lessons[3].chords[0])
   },
 
 

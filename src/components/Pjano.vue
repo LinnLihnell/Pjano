@@ -1,8 +1,8 @@
 <script>
-import Questions from './Questions.vue';
+import Question from './Question.vue';
 export default {
   components:{
-    Questions
+    Question
   },
   data() {
     return {
@@ -57,7 +57,7 @@ export default {
     <div class="key black" @click="playTone('A#')"></div>
     <div class="key white" @click="playTone('B')"></div>
   </div>
-  <Questions @nextQuestion="currentQuestion"/>
+
 </template>
 
 <style scoped>
