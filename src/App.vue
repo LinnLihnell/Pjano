@@ -12,7 +12,7 @@ export default {
 
 <template>
   <section>
-    <img :src=logga alt="logo">
+    <img :src=logga alt="logo" id="logo">
     <nav class="navbar">
       <ul>
         <li>
@@ -46,6 +46,8 @@ body {
   background-color: #f0f0f0;
   margin: 0;
   background-image: linear-gradient(to right top, #ecc9dd, #d5b4d0, #bba0c5, #9e8eba, #7e7daf, #6686ba, #448ebf, #0096be, #00b5c0, #4ed1af, #a2e697, #f6f58b);
+  background-repeat: no-repeat;
+  background-size: cover;
   ;
 }
 
@@ -61,19 +63,19 @@ section {
 
 main {
   width: 100vw;
-  /* height: 100vh; */
+  /*height: 100vh*/
 }
 
-/* TODO: Don't have that broad image manipulation. This will effect all images on the site */
-/* img {
+
+#logo{
   height: 150px;
   border-radius: 50%;
-} */
+} 
 
 nav {
   background-color: #474554;
 }
-
+@media(min-width: 501px){
 .navbar ul {
   margin: 0px;
   list-style-type: none;
@@ -101,8 +103,6 @@ nav {
   display: inline;
 }
 
-
-
 footer {
   /* background-color: #474554;
   color: white; */
@@ -114,23 +114,24 @@ footer {
 #piano {
   display: flex;
   justify-content: center;
+} 
 }
 
-@media(max-width: 1000px) {
-  /* img {
-    display: none;
-  } */
-
-  footer {
-    display: none;
-  }
-
-  /* TODO: have closer to the component. This will effect everything  */
-  /* body{
+@media(max-width: 500px) {
+#logo {
+  display: none;
+} 
+footer {
+  display: none;
+}
+body{
   transform: rotate(90deg);
-} */
-  #piano {
-    margin-top: 100px;
-  }
+}
+.navbar ul {
+  margin: 0px;
+  list-style-type: none;
+  padding: 0px;
+  overflow: hidden;
+}
 }
 </style>

@@ -2,6 +2,7 @@
 import Pjano from './Pjano.vue';
 import Questions from './Questions.vue';
 import Info from './Info.vue';
+import lessonsData from '../../assets/Lessones.json';
 
 export default{
   components: {
@@ -14,12 +15,18 @@ export default{
    data(){
     return{
       clickedNote : [],
-      answer: [],
-      result: null,
-      questions: [],
-      currentQuestion: {}
+      lesson: lessonsData.lessons[0]
+      // answer: [],
+      // result: null,
+      // questions: [],
+      // currentQuestion: {}
     }
   },
+
+  created(){
+    console.log(lessonsData)
+  },
+
 
   methods:{
     emittedTone(value){
@@ -36,6 +43,5 @@ export default{
 <template>
   hej
   <Pjano @playTone="emittedTone"/>
-  <Questions @nextQuestion="currentQuestion"/>
-  <Info/>
+  <!-- <Questions @nextQuestion="currentQuestion"/> -->
 </template>
