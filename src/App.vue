@@ -12,7 +12,7 @@ export default {
 
 <template>
   <section>
-    <img :src=logga alt="logo">
+    <img :src=logga alt="logo" id="logo">
     <nav class="navbar">
       <ul>
         <li>
@@ -42,10 +42,12 @@ export default {
 body {
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   background-color: #f0f0f0;
   margin: 0;
   background-image: linear-gradient(to right top, #ecc9dd, #d5b4d0, #bba0c5, #9e8eba, #7e7daf, #6686ba, #448ebf, #0096be, #00b5c0, #4ed1af, #a2e697, #f6f58b);
+  background-repeat: no-repeat;
+  background-size: cover;
   ;
 }
 
@@ -64,7 +66,7 @@ main {
   /* height: 100vh; */
 }
 
-img {
+#logo{
   height: 150px;
   border-radius: 50%;
 }
@@ -72,7 +74,7 @@ img {
 nav {
   background-color: #474554;
 }
-
+@media(min-width: 1001px){
 .navbar ul {
   margin: 0px;
   list-style-type: none;
@@ -114,8 +116,9 @@ footer {
   display: flex;
   justify-content: center;
 } 
+}
 @media(max-width: 1000px){
- img{
+#logo{
   display: none;
  } 
 footer{
@@ -123,9 +126,14 @@ footer{
 }
 body{
   transform: rotate(90deg);
+  max-width: 100vw;
 }
-#piano{
+/* #piano{
   margin-top: 100px;
+} */
+.navbar ul {
+  margin: 0px;
+  list-style-type: none;
 }
 }
 </style>
