@@ -2,60 +2,28 @@
 export default{
   data(){
     return{questions:[
-      {question:"Press key C",answer:"C"},
-      {question:"Press key C#",answer:"C#"},
-      {question:"Press key D",answer:"D"},
-      {question:"Press key D#",answer:"D#"},
-      {question:"Press key E",answer:"E"},
-      {question:"Press key F",answer:"F"},
-      {question:"Press key F#",answer:"F#"},
-      {question:"Press key G",answer:"G"},
-      {question:"Press key G#",answer:"G#"},
-      {question:"Press key A",answer:"A"},
-      {question:"Press key A#",answer:"A#"},
-      {question:"Press key B",answer:"B"},],
-      showQuestion: 'Question',
-      i: 0,
-
-      currentQuestion: []
-
-}
-  },
-  created(){
-    this.oneQuestion = this.questions[0].question
-  },
-  methods:{
-    nextQuestion(){
-        if(this.i < this.questions.length){
-          this.showQuestion = this.questions[this.i].question
-          this.currentQuestion.push(this.questions[this.i])
-          this.i++
-          this.$emit('currentQuestion')
-          console.log(this.currentQuestion)
-        }
-        else {
-          this.showQuestion = 'Done'
-        }
-
-    },
-    currentQuestion(){
-    this.$emit('currentQuestion')
-
-      }
+      {question:"Press key C",C:"0"},
+      {question:"Press key C#",Csharp:"1"},
+      {question:"Press key D",D:"2"},
+      {question:"Press key D#",Dsharp:"3"},
+      {question:"Press key E",E:"4"},
+      {question:"Press key F",F:"5"},
+      {question:"Press key F#",Fsharp:"6"},
+      {question:"Press key G",G:"7"},
+      {question:"Press key G#",Gsharp:"8"},
+      {question:"Press key A",A:"9"},
+      {question:"Press key A#",Asharp:"10"},
+      {question:"Press key B",B:"11"},],  
     }
-
-
-  }
-
-
+  },
+}
 </script>
 
-props: ['currentQuestion'],
+
 <template>
   <div class="questionContainer">
-  <p>{{ showQuestion }}</p>
-<p>Du tryckte på: {{ answer ? 'Rätt' : 'Fel' }}</p>
-<button @click="nextQuestion()">Next Question</button>
+<p>{{this.questions[this.Csharp.value].question  }}</p>
+<p>Du tryckte på: {{  }}</p>
 </div>
 </template>
 

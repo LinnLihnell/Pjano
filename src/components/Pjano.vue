@@ -4,9 +4,6 @@ export default {
   components:{
     Questions
   },
-
-  props: ['chords'],
-
   data() {
     return {
       keys: [

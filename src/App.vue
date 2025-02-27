@@ -42,7 +42,7 @@ export default {
 body {
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
   background-color: #f0f0f0;
   margin: 0;
   background-image: linear-gradient(to right top, #ecc9dd, #d5b4d0, #bba0c5, #9e8eba, #7e7daf, #6686ba, #448ebf, #0096be, #00b5c0, #4ed1af, #a2e697, #f6f58b);
@@ -63,7 +63,7 @@ section {
 
 main {
   width: 100vw;
-  /* height: 100vh; */
+  /*height: 100vh*/
 }
 
 
@@ -75,7 +75,7 @@ main {
 nav {
   background-color: #474554;
 }
-@media(min-width: 1001px){
+@media(min-width: 501px){
 .navbar ul {
   margin: 0px;
   list-style-type: none;
@@ -103,8 +103,6 @@ nav {
   display: inline;
 }
 
-
-
 footer {
   /* background-color: #474554;
   color: white; */
@@ -119,8 +117,7 @@ footer {
 } 
 }
 
-
-@media(max-width: 1000px) {
+@media(max-width: 500px) {
 #logo {
   display: none;
 } 
@@ -133,6 +130,8 @@ body{
 .navbar ul {
   margin: 0px;
   list-style-type: none;
+  padding: 0px;
+  overflow: hidden;
 }
 }
 </style>
