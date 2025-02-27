@@ -15,36 +15,51 @@ export default{
       {question:"Press key A#",answer:"A#"},
       {question:"Press key B",answer:"B"},],
       showQuestion: 'Question',
-      i: 0
+      i: 0,
+
+      currentQuestion: []
+
 }
   },
   created(){
-    // this.oneQuestion = this.questions[4].question
+    this.oneQuestion = this.questions[0].question
   },
   methods:{
     nextQuestion(){
         if(this.i < this.questions.length){
           this.showQuestion = this.questions[this.i].question
-        this.i++
+          this.currentQuestion.push(this.questions[this.i])
+          this.i++
+          this.$emit('currentQuestion')
+          console.log(this.currentQuestion)
         }
         else {
           this.showQuestion = 'Done'
         }
 
+        // currentQuestion(){
+        //   if()
+        // }
+
     },
+
+      currentQuestion(){
+          this.$emit(currentQuestion)
+
+      }
+    }
 
 
   }
-}
 
 
 </script>
 
-
+props: ['currentQuestion'],
 <template>
   <div class="questionContainer">
-<p>{{ showQuestion }}</p>
-<p>Du tryckte på: {{ answer }}</p>
+  <p>{{ showQuestion }}</p>
+<p>Du tryckte på: {{ answer ? 'Rätt' : 'Fel' }}</p>
 <button @click="nextQuestion()">Next Question</button>
 </div>
 </template>

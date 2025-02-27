@@ -1,0 +1,133 @@
+{
+    "lessons": [
+        {
+            "id": 1,
+            "lesson_name": "Learning Each Note",
+            "information": [
+                "Identify each note on the keyboard",
+                "Practice playing each note",
+                "Understand the sound of each note"
+            ],
+            "chords": [
+                [
+                    "C"
+                ],
+                [
+                    "C#"
+                ],
+                [
+                    "D"
+                ],
+                [
+                    "D#"
+                ],
+                [
+                    "E"
+                ],
+                [
+                    "F"
+                ],
+                [
+                    "F#"
+                ],
+                [
+                    "G"
+                ],
+                [
+                    "G#"
+                ],
+                [
+                    "A"
+                ],
+                [
+                    "A#"
+                ],
+                [
+                    "B"
+                ]
+            ],
+            "image": "LessonesImages/lessone.1.webp"
+        },
+        {
+            "id": 2,
+            "lesson_name": "Introduction to Piano",
+            "information": [
+                "Learn the basics of piano",
+                "Understand the layout of the keyboard",
+                "Introduction to musical notes"
+            ],
+            "chords": [
+                [
+                    "C",
+                    "E",
+                    "G"
+                ],
+                [
+                    "D",
+                    "F#",
+                    "A"
+                ],
+                [
+                    "E",
+                    "G#",
+                    "B"
+                ]
+            ],
+            "image": "lessonesImages/lessone.2.webp"
+        },
+        {
+            "id": 3,
+            "lesson_name": "Basic Chords",
+            "information": [
+                "Learn major and minor chords",
+                "Practice chord transitions",
+                "Introduction to chord progressions"
+            ],
+            "chords": [
+                [
+                    "A",
+                    "C#",
+                    "E"
+                ],
+                [
+                    "B",
+                    "D#",
+                    "F#"
+                ],
+                [
+                    "C",
+                    "E",
+                    "G"
+                ]
+            ],
+            "image": "lessonesImages/lessone.3.webp"
+        },
+        {
+            "id": 4,
+            "lesson_name": "Advanced Techniques",
+            "information": [
+                "Learn advanced chord voicings",
+                "Practice arpeggios",
+                "Introduction to improvisation"
+            ],
+            "chords": [
+                [
+                    "F",
+                    "A",
+                    "C"
+                ],
+                [
+                    "G",
+                    "B",
+                    "D"
+                ],
+                [
+                    "A",
+                    "C#",
+                    "E"
+                ]
+            ],
+            "image": "lessonesImages/lessone.4.webp"
+        }
+    ]
+}

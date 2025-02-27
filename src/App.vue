@@ -66,10 +66,11 @@ main {
   /* height: 100vh; */
 }
 
+
 #logo{
   height: 150px;
   border-radius: 50%;
-}
+} 
 
 nav {
   background-color: #474554;
@@ -117,20 +118,18 @@ footer {
   justify-content: center;
 } 
 }
-@media(max-width: 1000px){
-#logo{
+
+
+@media(max-width: 1000px) {
+#logo {
   display: none;
- } 
-footer{
+} 
+footer {
   display: none;
 }
 body{
   transform: rotate(90deg);
-  max-width: 100vw;
 }
-/* #piano{
-  margin-top: 100px;
-} */
 .navbar ul {
   margin: 0px;
   list-style-type: none;

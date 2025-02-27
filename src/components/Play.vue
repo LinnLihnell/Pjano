@@ -11,28 +11,30 @@ export default{
 
   },
 
-  data(){
+   data(){
     return{
-      clickedNote : {}
+      clickedNote : [],
+      answer: [],
+      result: null,
+      questions: [],
+      currentQuestion: {}
     }
   },
+
   methods:{
     emittedTone(value){
       this.clickedNote.push(value)
-    console.log("du tryckte på:")}
+    console.log("du tryckte på:", value)}
   },
-  rightWrongAnswer(clickedNote){
-      if(this.question === this.answer){
-      console.log(clickedNote)
-    }
-}
-}
+//   rightWrongAnswer(){
+//       this.answer.push(value)
 
+// }
+}
 </script>
 
 <template>
   hej
   <Pjano @playTone="emittedTone"/>
-  <Questions/>
-  <Info/>
+  <Questions @nextQuestion="currentQuestion"/>
 </template>
