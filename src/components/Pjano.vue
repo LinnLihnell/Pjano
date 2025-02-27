@@ -32,6 +32,7 @@ export default {
       console.log(output.pianoKey)
       this.$emit('playTone', value)
     },
+
     emittedQuestion(question){
       this.currentQuestion.push(question)
       console.log('fråga mottagen')
@@ -56,6 +57,7 @@ export default {
     <div class="key black" @click="playTone('A#')"></div>
     <div class="key white" @click="playTone('B')"></div>
   </div>
+  <Questions @nextQuestion="currentQuestion"/>
 </template>
 
 <style scoped>
