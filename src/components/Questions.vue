@@ -37,14 +37,9 @@ export default{
           this.showQuestion = 'Done'
         }
 
-        // currentQuestion(){
-        //   if()
-        // }
-
     },
-
-      currentQuestion(){
-          this.$emit(currentQuestion)
+    currentQuestion(){
+    this.$emit('currentQuestion')
 
       }
     }

@@ -14,10 +14,10 @@ export default{
    data(){
     return{
       clickedNote : [],
-      answer: [],
-      result: null,
-      questions: [],
-      currentQuestion: {}
+      // answer: [],
+      // result: null,
+      // questions: [],
+      // currentQuestion: {}
     }
   },
 
@@ -36,5 +36,5 @@ export default{
 <template>
   hej
   <Pjano @playTone="emittedTone"/>
-  <Questions @nextQuestion="currentQuestion"/>
+  <!-- <Questions @nextQuestion="currentQuestion"/> -->
 </template>
