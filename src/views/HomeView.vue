@@ -9,11 +9,8 @@ export default{
     Pjano,
     Question,
     Play,
-
   },
-
 }
-
 </script>
 
 <template>
