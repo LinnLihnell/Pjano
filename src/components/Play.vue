@@ -37,4 +37,5 @@ export default{
   hej
   <Pjano @playTone="emittedTone"/>
   <Questions @nextQuestion="currentQuestion"/>
+  <Info/>
 </template>
