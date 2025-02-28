@@ -23,18 +23,20 @@ export default{
     },
     feedback:{
       type: String
+    },
+    color:{
+      type: String
     }
-
-
   }
 }
 </script>
 
 
 <template>
-<div class="questionContainer">
-<p>Press {{ chords }}</p>
-<p>{{ feedback }}</p>
+<div class="questionContainer" :style="{backgroundColor:color}">
+  <p>{{ feedback }}</p>
+  <p>Next: Press {{ chords }}</p>
+
 </div>
 </template>
 
@@ -47,6 +49,7 @@ export default{
   width: 15rem;
   margin: auto;
   margin-bottom: 10px;
+  border-radius: 20px;
 }
 p {
   text-align: center;
