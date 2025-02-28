@@ -31,7 +31,7 @@ export default {
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 10px;
 }
@@ -40,14 +40,13 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 80%;
+    margin: 10px auto;
 }
 
 .card:hover {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9b0;
     cursor: pointer;
-    transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -75,6 +74,6 @@ export default {
 
 .progress {
     width: 80%;
-    margin-top: 10px;
+    margin: auto;
 }
 </style>
