@@ -66,12 +66,12 @@ export default {
 }
 
 .key {
-  width: 40px;
-  height: 200px;
+  width: 4em;
+  height: 14em;
   border: 1px solid #000;
   box-sizing: border-box;
   cursor: pointer;
-  margin-left: -15px;
+  margin-left: -1.5em;
 }
 
 .white {
@@ -81,9 +81,8 @@ export default {
 
 .black {
   background-color: #000;
-  width: 30px;
-  height: 120px;
+  width: 3em;
+  height: 8em;
   z-index: 2
 }
-
 </style>
