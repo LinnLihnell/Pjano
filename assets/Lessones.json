@@ -128,6 +128,72 @@
                 ]
             ],
             "image": "lessonesImages/lessone.4.webp"
+        },
+        {
+            "id": 5,
+            "lesson_name": "Twinkle, Twinkle, Little Star",
+            "information": [
+                "Learn the melody of Twinkle, Twinkle, Little Star",
+                "Practice playing with both hands",
+                "Understand basic song structure"
+            ],
+            "chords": [
+                [
+                    "C",
+                    "C",
+                    "G",
+                    "G",
+                    "A",
+                    "A",
+                    "G"
+                ],
+                [
+                    "F",
+                    "F",
+                    "E",
+                    "E",
+                    "D",
+                    "D",
+                    "C"
+                ],
+                [
+                    "G",
+                    "G",
+                    "F",
+                    "F",
+                    "E",
+                    "E",
+                    "D"
+                ],
+                [
+                    "G",
+                    "G",
+                    "F",
+                    "F",
+                    "E",
+                    "E",
+                    "D"
+                ],
+                [
+                    "C",
+                    "C",
+                    "G",
+                    "G",
+                    "A",
+                    "A",
+                    "G"
+                ],
+                [
+                    "F",
+                    "F",
+                    "E",
+                    "E",
+                    "D",
+                    "D",
+                    "C"
+                ]
+            ],
+            "image": "lessonesImages/lessone.5.webp"
         }
     ]
 }
