@@ -16,10 +16,12 @@ export default {
   data() {
     return {
       clickedNote: [],
-      lesson: lessonsData.lessons[0].chords[0][0],
+      note: lessonsData.lessons[0].chords[0][0],
       answer: '',
       lessonID: this.$route.params.id,
-      user: User.loadFromLocalStorage()
+      user: User.loadFromLocalStorage(),
+      noteIndex: 0
+
     }
   },
 
@@ -39,21 +41,36 @@ export default {
     emittedTone(value) {
       this.clickedNote.push(value)
       console.log("du tryckte på:", value)
-      if (value === this.lesson) {
+      if (value === this.note) {
         console.log("rätt")
         this.answer = 'Bra jobbat'
-      } else {
+        this.nextLesson()
+        // this.lesson++
+        // console.log(this.lessonsData.lessons[0].chords[0][0]++)
+        } else {
         console.log("fel")
-        this.answer = 'försök igen'
+        this.answer = 'Försök igen'
       }
+    },
+    nextLesson(){
+    // console.log('Nästa fråga')
+    if(this.noteIndex < lessonsData.lessons[0].chords.length - 1){
+      this.noteIndex++
+      this.note = lessonsData.lessons[0].chords[this.noteIndex][0]
+    } else {
+      this.answer = 'Klart'
     }
+
+  }
   },
+
+
 
 }
 </script>
 
 <template>
   <Pjano @playTone="emittedTone" />
-  <Question :chords="lesson" :feedback="answer" />
+  <Question :chords="note" :feedback="answer" />
   <Info />
 </template>
