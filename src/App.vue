@@ -24,6 +24,9 @@ export default {
         <li>
           <RouterLink to="/facts">Facts</RouterLink>
         </li>
+        <li>
+          <RouterLink to="/lessons">Lessons</RouterLink>
+        </li>
       </ul>
     </nav>
   </section>
@@ -48,7 +51,6 @@ body {
   background-image: linear-gradient(to right top, #ecc9dd, #d5b4d0, #bba0c5, #9e8eba, #7e7daf, #6686ba, #448ebf, #0096be, #00b5c0, #4ed1af, #a2e697, #f6f58b);
   background-repeat: no-repeat;
   background-size: cover;
-  ;
 }
 
 footer {
@@ -80,6 +82,7 @@ main {
   height: 150px;
   border-radius: 50%;
   margin: 0 0 -75px 10px;
+  z-index: 1;
 }
 
 nav {
