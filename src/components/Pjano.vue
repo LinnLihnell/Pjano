@@ -78,11 +78,17 @@ export default {
   background-color: #fff;
   z-index: 1;
 }
+.white:hover{
+  background-color: lightgray;
+}
 
 .black {
   background-color: #000;
   width: 3em;
   height: 8em;
   z-index: 2
+}
+.black:hover{
+  background-color: rgb(60, 60, 60);
 }
 </style>

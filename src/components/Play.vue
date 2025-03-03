@@ -16,10 +16,13 @@ export default {
   data() {
     return {
       clickedNote: [],
-      lesson: lessonsData.lessons[0].chords[0][0],
+      note: lessonsData.lessons[0].chords[0][0],
       answer: '',
       lessonID: this.$route.params.id,
-      user: User.loadFromLocalStorage()
+      user: User.loadFromLocalStorage(),
+      noteIndex: 0,
+      backgroundColor: '#474554'
+
     }
   },
 
@@ -39,21 +42,37 @@ export default {
     emittedTone(value) {
       this.clickedNote.push(value)
       console.log("du tryckte på:", value)
-      if (value === this.lesson) {
+      if (value === this.note) {
         console.log("rätt")
-        this.answer = 'Bra jobbat'
-      } else {
+        this.answer = 'Well done!'
+        this.nextLesson()
+        } else {
         console.log("fel")
-        this.answer = 'försök igen'
+        this.answer = 'Try again'
+        this.changeColor()
       }
+    },
+    nextLesson(){
+    if(this.noteIndex < lessonsData.lessons[0].   chords.length - 1){
+      this.noteIndex++
+      this.note = lessonsData.lessons[0].chords[this.noteIndex][0]
+    } else {
+      this.answer = 'Klart'
+    }
+
+  },
+  changeColor(value){
+    if(value !==this.note){
+    this.backgroundColor = this.backgroundColor=== '#474554'?'red':'#474554'
+    }
+
     }
   },
-
 }
 </script>
 
 <template>
   <Pjano @playTone="emittedTone" />
-  <Question :chords="lesson" :feedback="answer" />
+  <Question :chords="note" :feedback="answer" :color="backgroundColor"/>
   <Info />
 </template>
