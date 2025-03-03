@@ -44,18 +44,18 @@ export default {
 
 <template>
   <div id="piano">
-    <div class="key white" style="margin-left: 0" @click="playTone('C')"></div>
-    <div class="key black" @click="playTone('C#')"></div>
-    <div class="key white" @click="playTone('D')"></div>
-    <div class="key black" @click="playTone('D#')"></div>
-    <div class="key white" @click="playTone('E')"></div>
-    <div class="key white" style="margin-left: 0" @click="playTone('F')"></div>
-    <div class="key black" @click="playTone('F#')"></div>
-    <div class="key white" @click="playTone('G')"></div>
-    <div class="key black" @click="playTone('G#')"></div>
-    <div class="key white" @click="playTone('A')"></div>
-    <div class="key black" @click="playTone('A#')"></div>
-    <div class="key white" @click="playTone('B')"></div>
+    <div class="key white" style="margin-left: 0" @mousedown="playTone('C')"></div>
+    <div class="key black" @mousedown="playTone('C#')"></div>
+    <div class="key white" @mousedown="playTone('D')"></div>
+    <div class="key black" @mousedown="playTone('D#')"></div>
+    <div class="key white" @mousedown="playTone('E')"></div>
+    <div class="key white" style="margin-left: 0" @mousedown="playTone('F')"></div>
+    <div class="key black" @mousedown="playTone('F#')"></div>
+    <div class="key white" @mousedown="playTone('G')"></div>
+    <div class="key black" @mousedown="playTone('G#')"></div>
+    <div class="key white" @mousedown="playTone('A')"></div>
+    <div class="key black" @mousedown="playTone('A#')"></div>
+    <div class="key white" @mousedown="playTone('B')"></div>
   </div>
 </template>
 
