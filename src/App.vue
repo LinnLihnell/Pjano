@@ -1,7 +1,11 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router';
+import SoundProvider from "./providers/SoundProvider.vue";
 
 export default {
+  components: {
+    SoundProvider
+  },
   data() {
     return {
       logga: '../assets/Pjanologga.png'
@@ -32,7 +36,9 @@ export default {
   </section>
 
   <main>
-    <RouterView />
+    <SoundProvider>
+      <RouterView />
+    </SoundProvider>
   </main>
 
   <footer>

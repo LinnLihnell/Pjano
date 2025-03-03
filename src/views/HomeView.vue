@@ -3,8 +3,7 @@ import Pjano from '../components/Pjano.vue';
 import Question from '../components/Question.vue';
 import Play from '../components/Play.vue';
 
-
-export default{
+export default {
   components: {
     Pjano,
     Question,
@@ -14,7 +13,7 @@ export default{
 </script>
 
 <template>
-<!-- <Question /> -->
-<!-- <Pjano /> -->
-<Play/>
+  <!-- <Question /> -->
+  <!-- <Pjano /> -->
+  <Play />
 </template>

@@ -1,25 +1,14 @@
 <script>
 import Question from './Question.vue';
+import { inject } from "vue";
+
 export default {
   components: {
     Question
   },
   data() {
     return {
-      keys: [
-        { pianoKey: 'C', sound: '../assets/sounds/C3.mp3' },
-        { pianoKey: 'C#', sound: '../assets/sounds/Csharp3.mp3' },
-        { pianoKey: 'D', sound: '../assets/sounds/D3.mp3' },
-        { pianoKey: 'D#', sound: '../assets/sounds/Dsharp3.mp3' },
-        { pianoKey: 'E', sound: '../assets/sounds/E3.mp3' },
-        { pianoKey: 'F', sound: '../assets/sounds/F3.mp3' },
-        { pianoKey: 'F#', sound: '../assets/sounds/Fsharp3.mp3' },
-        { pianoKey: 'G', sound: '../assets/sounds/G3.mp3' },
-        { pianoKey: 'G#', sound: '../assets/sounds/Gsharp3.mp3' },
-        { pianoKey: 'A', sound: '../assets/sounds/A3.mp3' },
-        { pianoKey: 'A#', sound: '../assets/sounds/Asharp3.mp3' },
-        { pianoKey: 'B', sound: '../assets/sounds/B3.mp3' }],
-
+      playSound: inject("playSound"),
       currentQuestion: []
     }
   },
@@ -27,10 +16,9 @@ export default {
   methods: {
     playTone(event, value) {
       event.preventDefault();
-      let output = this.keys.find(keys => keys.pianoKey == value);
-      let audio = new Audio(output.sound)
-      audio.play()
-      console.log(output.pianoKey)
+      if (this.playSound) {
+        this.playSound(value);
+      }
       this.$emit('playTone', value)
     },
 
