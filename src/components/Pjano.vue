@@ -6,7 +6,6 @@ export default {
   },
   data() {
     return {
-      playSound: inject("playSound"),
       keys: [
         { pianoKey: 'C', sound: '../assets/sounds/C3.mp3' },
         { pianoKey: 'C#', sound: '../assets/sounds/Csharp3.mp3' },
