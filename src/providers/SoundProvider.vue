@@ -39,7 +39,7 @@ export default {
                 { pianoKey: 'G#', sound: '../assets/sounds/Gsharp3.wav' },
                 { pianoKey: 'A', sound: '../assets/sounds/A3.wav' },
                 { pianoKey: 'A#', sound: '../assets/sounds/Asharp3.wav' },
-                { pianoKey: 'B', sound: '../assets/sounds/B3.mp3' }
+                { pianoKey: 'B', sound: '../assets/sounds/B3.wav' }
             ]
         };
     },
