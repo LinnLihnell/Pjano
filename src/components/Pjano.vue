@@ -1,11 +1,12 @@
 <script>
 import Question from './Question.vue';
 export default {
-  components:{
+  components: {
     Question
   },
   data() {
     return {
+      playSound: inject("playSound"),
       keys: [
         { pianoKey: 'C', sound: '../assets/sounds/C3.mp3' },
         { pianoKey: 'C#', sound: '../assets/sounds/Csharp3.mp3' },
@@ -20,12 +21,13 @@ export default {
         { pianoKey: 'A#', sound: '../assets/sounds/Asharp3.mp3' },
         { pianoKey: 'B', sound: '../assets/sounds/B3.mp3' }],
 
-        currentQuestion: []
+      currentQuestion: []
     }
   },
 
   methods: {
-    playTone(value) {
+    playTone(event, value) {
+      event.preventDefault();
       let output = this.keys.find(keys => keys.pianoKey == value);
       let audio = new Audio(output.sound)
       audio.play()
@@ -33,7 +35,7 @@ export default {
       this.$emit('playTone', value)
     },
 
-    emittedQuestion(question){
+    emittedQuestion(question) {
       this.currentQuestion.push(question)
       console.log('fråga mottagen')
     }
@@ -44,18 +46,18 @@ export default {
 
 <template>
   <div id="piano">
-    <div class="key white" style="margin-left: 0" @mousedown="playTone('C')"></div>
-    <div class="key black" @mousedown="playTone('C#')"></div>
-    <div class="key white" @mousedown="playTone('D')"></div>
-    <div class="key black" @mousedown="playTone('D#')"></div>
-    <div class="key white" @mousedown="playTone('E')"></div>
-    <div class="key white" style="margin-left: 0" @mousedown="playTone('F')"></div>
-    <div class="key black" @mousedown="playTone('F#')"></div>
-    <div class="key white" @mousedown="playTone('G')"></div>
-    <div class="key black" @mousedown="playTone('G#')"></div>
-    <div class="key white" @mousedown="playTone('A')"></div>
-    <div class="key black" @mousedown="playTone('A#')"></div>
-    <div class="key white" @mousedown="playTone('B')"></div>
+    <div class="key white" style="margin-left: 0" @pointerdown="playTone($event, 'C')"></div>
+    <div class="key black" @pointerdown="playTone($event, 'C#')"></div>
+    <div class="key white" @pointerdown="playTone($event, 'D')"></div>
+    <div class="key black" @pointerdown="playTone($event, 'D#')"></div>
+    <div class="key white" @pointerdown="playTone($event, 'E')"></div>
+    <div class="key white" style="margin-left: 0" @pointerdown="playTone($event, 'F')"></div>
+    <div class="key black" @pointerdown="playTone($event, 'F#')"></div>
+    <div class="key white" @pointerdown="playTone($event, 'G')"></div>
+    <div class="key black" @pointerdown="playTone($event, 'G#')"></div>
+    <div class="key white" @pointerdown="playTone($event, 'A')"></div>
+    <div class="key black" @pointerdown="playTone($event, 'A#')"></div>
+    <div class="key white" @pointerdown="playTone($event, 'B')"></div>
   </div>
 </template>
 
@@ -78,7 +80,8 @@ export default {
   background-color: #fff;
   z-index: 1;
 }
-.white:hover{
+
+.white:hover {
   background-color: lightgray;
 }
 
@@ -88,7 +91,8 @@ export default {
   height: 8em;
   z-index: 2
 }
-.black:hover{
+
+.black:hover {
   background-color: rgb(60, 60, 60);
 }
 </style>
