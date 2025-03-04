@@ -46,10 +46,11 @@ export default {
         console.log("rätt")
         this.answer = 'Well done!'
         this.nextLesson()
+         this.backgroundColor='#474554'
         } else {
         console.log("fel")
         this.answer = 'Try again'
-        this.changeColor()
+        this.backgroundColor='red'
       }
     },
     nextLesson(){
@@ -61,12 +62,7 @@ export default {
     }
 
   },
-  changeColor(value){
-    if(value !==this.note){
-    this.backgroundColor = this.backgroundColor=== '#474554'?'red':'#474554'
-    }
 
-    }
   },
 }
 </script>
