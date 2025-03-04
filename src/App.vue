@@ -8,7 +8,7 @@ export default {
   },
   data() {
     return {
-      logga: '../assets/Pjanologga.png'
+      logga: '../assets/PjanologoNew.png'
     }
   }
 };
