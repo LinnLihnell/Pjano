@@ -103,7 +103,6 @@ nav ul {
   background-color: #474554;
 }
 
-@media(min-width: 501px) {
   .navbar a {
     text-decoration: none;
     text-align: center;
@@ -127,7 +126,7 @@ nav ul {
     display: flex;
     justify-content: center;
   }
-}
+
 
 @media(max-width: 500px) {
   #logo {
@@ -140,13 +139,6 @@ nav ul {
 
   body {
     transform: rotate(90deg);
-  }
-
-  .navbar ul {
-    margin: 0px;
-    list-style-type: none;
-    padding: 0px;
-    overflow: hidden;
   }
 }
 </style>
