@@ -23,7 +23,7 @@ export default createRouter({
     },
     {
       component: LessonsView,
-      path: '/lessons'
-    }
+      path: '/lessons',
+    },
   ]
 })
