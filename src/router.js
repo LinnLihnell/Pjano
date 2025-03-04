@@ -12,7 +12,7 @@ export default createRouter({
     {
       name: 'Home',
       component: HomeView,
-      path: '/:id?' //Optional id parameter
+      path: '/'
     },
     {
       component: ProfileView,
@@ -29,7 +29,7 @@ export default createRouter({
     {
       name: 'Playing',
       component: PlayView,
-      path: '/:id?'
-    }, 
+      path: '/playing/:id?'
+    },
   ]
 })
