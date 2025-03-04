@@ -16,19 +16,21 @@ export default {
   data() {
     return {
       clickedNote: [],
-      note: lessonsData.lessons[0].chords[0][0],
-      answer: '',
       lessonID: this.$route.params.id,
+      note: lessonsData.lessons[this.$route.params.id - 1].chords[0][0],
+      answer: '',
       user: User.loadFromLocalStorage(),
-      noteIndex: 0,
+      i: 0,
+      x: 0,
       backgroundColor: '#474554'
 
     }
   },
 
   created() {
+    console.log(this.$route.params.id)
     console.log(lessonsData)
-    console.log(lessonsData.lessons[0].chords[0])
+    console.log(lessonsData.lessons[this.$route.params.id - 1].chords[this.i])
     if (this.user.progress[this.lessonID] !== undefined) {
       this.user.progress[this.lessonID] += 25;
     }
@@ -54,11 +56,17 @@ export default {
       }
     },
     nextLesson(){
-    if(this.noteIndex < lessonsData.lessons[0].   chords.length - 1){
-      this.noteIndex++
-      this.note = lessonsData.lessons[0].chords[this.noteIndex][0]
+    if(this.x < lessonsData.lessons[this.$route.params.id - 1].chords.length){
+
+    if(this.i < lessonsData.lessons[this.$route.params.id - 1].chords[this.x].length){
+      this.i++
+      this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
+      // this.x = this.chords[this.x]
     } else {
       this.answer = 'Klart'
+    }
+
+
     }
 
   },
