@@ -24,7 +24,7 @@ export default {
             let user = User.loadFromLocalStorage();
             user.lastLesson = lessonId;
             user.saveToLocalStorage();
-            this.$router.push({ name: 'Home', params: { id: lessonId } });
+            this.$router.push({ name: 'Playing', params: { id: lessonId } });
         }
     }
 };

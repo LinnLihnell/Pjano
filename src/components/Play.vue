@@ -22,7 +22,9 @@ export default {
       user: User.loadFromLocalStorage(),
       i: 0,
       x: 0,
-      backgroundColor: '#474554'
+      backgroundColor: '#474554',
+      conter:0,
+      fel:"none",
 
     }
   },
@@ -53,7 +55,8 @@ export default {
         console.log("fel")
         this.answer = 'Try again'
         this.backgroundColor='red'
-      }
+        this.conter= this.conter + 1
+        }
     },
     nextLesson(){
     if(this.x < lessonsData.lessons[this.$route.params.id - 1].chords.length){
@@ -64,19 +67,18 @@ export default {
       // this.x = this.chords[this.x]
     } else {
       this.answer = 'Klart'
+      this.fel = "inline"
     }
 
-
     }
-
-  },
-
+  }
   },
 }
 </script>
 
 <template>
-  <Pjano @playTone="emittedTone" />
   <Question :chords="note" :feedback="answer" :color="backgroundColor"/>
+  <Pjano @playTone="emittedTone" />
   <Info />
+  <div :style="{display: fel}">{{conter}}</div>
 </template>

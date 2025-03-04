@@ -4,6 +4,7 @@ import HomeView from './views/HomeView.vue'
 import ProfileView from './views/ProfileView.vue'
 import FactsView from './views/FactsView.vue'
 import LessonsView from './views/LessonsView.vue'
+import PlayView from './views/PlayView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -24,6 +25,11 @@ export default createRouter({
     {
       component: LessonsView,
       path: '/lessons'
-    }
+    },
+    {
+      name: 'Playing',
+      component: PlayView,
+      path: '/:id?'
+    }, 
   ]
 })
