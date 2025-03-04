@@ -21,8 +21,9 @@ export default {
       lessonID: this.$route.params.id,
       user: User.loadFromLocalStorage(),
       noteIndex: 0,
-      backgroundColor: '#474554'
-
+      backgroundColor: '#474554',
+      conter:0,
+      fel:"none",
     }
   },
 
@@ -51,7 +52,8 @@ export default {
         console.log("fel")
         this.answer = 'Try again'
         this.backgroundColor='red'
-      }
+        this.conter= this.conter + 1
+        }
     },
     nextLesson(){
     if(this.noteIndex < lessonsData.lessons[0].   chords.length - 1){
@@ -59,16 +61,16 @@ export default {
       this.note = lessonsData.lessons[0].chords[this.noteIndex][0]
     } else {
       this.answer = 'Klart'
+      this.fel = "inline"
     }
-
   },
-
   },
 }
 </script>
 
 <template>
-  <Pjano @playTone="emittedTone" />
   <Question :chords="note" :feedback="answer" :color="backgroundColor"/>
+  <Pjano @playTone="emittedTone" />
   <Info />
+  <div :style="{display: fel}">{{conter}}</div>
 </template>
