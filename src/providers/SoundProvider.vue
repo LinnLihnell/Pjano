@@ -28,18 +28,18 @@ export default {
     data() {
         return {
             keys: [
-                { pianoKey: 'C', sound: '../assets/sounds/C3.wav' },
-                { pianoKey: 'C#', sound: '../assets/sounds/Csharp3.wav' },
-                { pianoKey: 'D', sound: '../assets/sounds/D3.wav' },
-                { pianoKey: 'D#', sound: '../assets/sounds/Dsharp3.wav' },
-                { pianoKey: 'E', sound: '../assets/sounds/E3.wav' },
-                { pianoKey: 'F', sound: '../assets/sounds/F3.wav' },
-                { pianoKey: 'F#', sound: '../assets/sounds/Fsharp3.wav' },
-                { pianoKey: 'G', sound: '../assets/sounds/G3.wav' },
-                { pianoKey: 'G#', sound: '../assets/sounds/Gsharp3.wav' },
-                { pianoKey: 'A', sound: '../assets/sounds/A3.wav' },
-                { pianoKey: 'A#', sound: '../assets/sounds/Asharp3.wav' },
-                { pianoKey: 'B', sound: '../assets/sounds/B3.wav' }
+                { pianoKey: 'C', sound: '/assets/sounds/C3.wav' },
+                { pianoKey: 'C#', sound: '/assets/sounds/Csharp3.wav' },
+                { pianoKey: 'D', sound: '/assets/sounds/D3.wav' },
+                { pianoKey: 'D#', sound: '/assets/sounds/Dsharp3.wav' },
+                { pianoKey: 'E', sound: '/assets/sounds/E3.wav' },
+                { pianoKey: 'F', sound: '/assets/sounds/F3.wav' },
+                { pianoKey: 'F#', sound: '/assets/sounds/Fsharp3.wav' },
+                { pianoKey: 'G', sound: '/assets/sounds/G3.wav' },
+                { pianoKey: 'G#', sound: '/assets/sounds/Gsharp3.wav' },
+                { pianoKey: 'A', sound: '/assets/sounds/A3.wav' },
+                { pianoKey: 'A#', sound: '/assets/sounds/Asharp3.wav' },
+                { pianoKey: 'B', sound: '/assets/sounds/B3.wav' }
             ]
         };
     },
