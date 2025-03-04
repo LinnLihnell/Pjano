@@ -1,6 +1,8 @@
 <template>
-    <LessonComponent v-for="lesson in lessons" :key="lesson.id" :lesson="lesson" :progress="user.progress[lesson.id]"
-        @click="startLesson(lesson.id)" />
+    <div class="container">
+        <LessonComponent v-for="lesson in lessons" :key="lesson.id" :lesson="lesson"
+            :progress="user.progress[lesson.id]" @click="startLesson(lesson.id)" />
+    </div>
 </template>
 
 <script>

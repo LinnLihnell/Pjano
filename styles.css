@@ -22,3 +22,10 @@
     padding: 10px;
     margin: 10px auto;
 }
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(to right top, #ecc9dd, #d5b4d0, #bba0c5, #9e8eba, #7e7daf, #6686ba, #448ebf, #0096be, #00b5c0, #4ed1af, #a2e697, #f6f58b);
+}

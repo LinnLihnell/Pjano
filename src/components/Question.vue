@@ -1,7 +1,7 @@
 <script>
-export default{
-  data(){
-    return{
+export default {
+  data() {
+    return {
       // questions:[
       // {question:"Press key C",Ckey:"0"},
       // {question:"Press key C#",Csharp:"1"},
@@ -17,14 +17,14 @@ export default{
       // {question:"Press key B",Bkey:"11"},],
     }
   },
-  props:{
-    chords:{
+  props: {
+    chords: {
       type: String
     },
-    feedback:{
+    feedback: {
       type: String
     },
-    color:{
+    color: {
       type: String
     }
   }
@@ -33,31 +33,32 @@ export default{
 
 
 <template>
-<div class="questionContainer" :style="{backgroundColor:color}">
-  <p>{{ feedback }}</p>
-  <p>Next: Press {{ chords }}</p>
+  <div class="questionContainer" :style="{ backgroundColor: color }">
+    <p>{{ feedback }}</p>
+    <p>Next: Press {{ chords }}</p>
 
-</div>
+  </div>
 </template>
 
 
 <style scoped>
-
-.questionContainer{
+.questionContainer {
   background-color: #474554;
   color: white;
   width: 15rem;
+  max-width: 100%;
   margin: auto;
   margin-bottom: 10px;
   border-radius: 20px;
 }
+
 p {
   text-align: center;
   padding: 10px;
 }
-button{
-background-color: #4745541f;
-color: white;
-}
 
+button {
+  background-color: #4745541f;
+  color: white;
+}
 </style>
