@@ -7,14 +7,23 @@ export default {
   components:{
     Play
   },
- methods:{
-  userHistory(){
-    if(value === undefined){
-    value= "id för första lesone"
+  created(){
+    const isReturningUser=localStorage.getItem('isReturningUser')==='true'
+    this.isReturningUser=isReturningUser
+  },
+  data(){
+    return{
+      isReturningUser:false
     }
-
   }
- }
+//  methods:{
+//   userHistory(){
+//     if(value === undefined){
+//     value= "id för första lesone"
+//     }
+
+//   }
+//  }
  }
 
 </script>
@@ -34,6 +43,9 @@ export default {
   </div>
   <div class="card" @click="$router.push({ path: '/facts'})">
     <h2>Facts</h2>
+  </div>
+  <div class="card" :class="{ disabled:isReturningUser}" @click="!isReturningUser && $router.push({ path:'/profile'})"  style="height: 60px;">
+    <h2>Create profile</h2>
   </div>
 </div>
 
@@ -77,5 +89,10 @@ export default {
 
 .card:hover h2 {
     margin-left: 20px;
+}
+.disabled{
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 </style>

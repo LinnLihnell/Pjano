@@ -1,13 +1,23 @@
 <template>
-  <div>
-    <h1 v-if="user">Hello {{ user.username }}</h1>
+   <h3 v-if="deleteMessage" class="deleted">{{ deleteMessage }}</h3>
+  <div class="profilecontainer" v-if="!isReturningUser">
+    <h1 v-if="!deleteMessage">Welcome!</h1>
+    <p v-if="!deleteMessage">Please create your profile by choosing a username</p>
     <form @submit.prevent="saveUserProfile">
       <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" v-model="userName">
+        <label for="name">Username:</label>
+        <input type="text" id="name" name="name" v-model="userName" class="form-control">
       </div>
-      <button type="submit">Save</button>
+      <button type="submit" class="btn btn-primary">Create profile</button>
     </form>
+  </div>
+
+  <div class="profilecontainer" v-else>
+    <h1>Welcome {{ user.username }}</h1>
+    <div class="results">
+      <p>Number of sessions: {{ sessionCount }} </p>
+    </div>
+    <button @click="removeProfile" class="btn btn-danger">Delete profile</button>
   </div>
 </template>
 
@@ -18,24 +28,65 @@ export default {
   data() {
     return {
       user: new User(),
-      userName: ''
+      userName: '',
+      isReturningUser:false,
+      deleteMessage: '',
+      sessionCount:0
     }
   },
   methods: {
     saveUserProfile() {
       this.user.username = this.userName;
       this.user.saveToLocalStorage();
+      this.isReturningUser=true;
+      this.deleteMessage='',
+      localStorage.setItem('isReturningUser', 'true')
+    },
+    removeProfile(){
+      localStorage.removeItem('user')
+      localStorage.removeItem('sessionCount')
+      localStorage.setItem('isReturningUser', 'false')
+      this.user=new User()
+      this.userName=""
+      this.isReturningUser=false
+      this.deleteMessage= 'Your profile has been deleted but you can create a new one here'
+
     }
   },
   created() {
-    this.user = User.loadFromLocalStorage();
-    this.userName = this.user.username;
+    const loadedUser=User.loadFromLocalStorage()
+    if(loadedUser && loadedUser.username){
+      this.user=loadedUser
+      this.userName = this.user.username;
+      this.isReturningUser=true
+    } else{
+      this.user=new User()
+      this.username=''
+      this.isReturningUser=false
+    }
+
+    let sessionCount=localStorage.getItem('sessionCount')
+    if(!sessionCount){
+      sessionCount=0
+    }
+    sessionCount=parseInt(sessionCount) + 1
+    localStorage.setItem('sessionCount', sessionCount)
+    this.sessionCount=sessionCount
+
   }
 
 }
 </script>
 
 <style scoped>
+.profilecontainer{
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+}
+.deleted{
+text-align: center;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -53,7 +104,6 @@ form {
 
 form label {
   margin-right: 10px;
-  color: var(--text-color);
 }
 
 form input {
