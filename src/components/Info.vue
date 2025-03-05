@@ -2,11 +2,8 @@
 import { BButton } from 'bootstrap-vue-next';
 import lessonsData from '../../assets/Lessones.json';
 
-export default{
-  created(){
-
-  } ,
-  data (){
+export default {
+  data() {
     return {
       showInfo: "true",
       disabledPrevious: false,
@@ -25,34 +22,34 @@ export default{
 
       //   {header:"Learning About Flats", text:"The word Flat is also like short hand in typing. It's a short hand way of saying that you are to move 1 half step down the keyboard. The symbol is b.", picture: '../assets/pianoimg/piano6.png'}
       // ]
-      facts: lessonsData.lessons[this.$route.params.id -1]
+      facts: lessonsData.lessons[this.$route.params.id - 1]
     }
   },
   created() {
     // console.log(lessonsData)
-    console.log(lessonsData.lessons[this.$route.params.id -1].information[this.currentIndex])
+    console.log(lessonsData.lessons[this.$route.params.id - 1].information[this.currentIndex])
   },
 
   methods: {
-    displayNone(){
+    displayNone() {
       this.showInfo = false
     },
-    nextFact(){
+    nextFact() {
       console.log(this.currentIndex)
-      if (this.currentIndex < this.facts.information.length -1){
+      if (this.currentIndex < this.facts.information.length - 1) {
         this.currentIndex++
       }
       else {
         this.currentIndex = 0
       }
     },
-    previousFact(){
+    previousFact() {
       console.log(this.currentIndex)
-      if (this.currentIndex > 0 ){
+      if (this.currentIndex > 0) {
         this.currentIndex--
       }
       else {
-        this.currentIndex = this.facts.information.length -1
+        this.currentIndex = this.facts.information.length - 1
       }
     }
   }
@@ -68,10 +65,11 @@ export default{
       <img :src="facts[currentIndex].picture" alt="Picture"> -->
       <h3>{{ facts.lesson_name }}</h3>
       <p>{{ facts.information[this.currentIndex] }}</p>
-      <img :src="`/assets/${facts.infoImage[this.currentIndex]}`"  alt="image">
+      <img :src="`/assets/${facts.infoImage[this.currentIndex]}`" alt="image">
       <div id="navForBackward">
         <BButton @click="previousFact" variant="outline-secondary"><i class="bi bi-arrow-left"></i></BButton>
-        <BButton class="rightBtn" variant="outline-secondary" @click="nextFact" ><i class="bi bi-arrow-right"></i></BButton>
+        <BButton class="rightBtn" variant="outline-secondary" @click="nextFact"><i class="bi bi-arrow-right"></i>
+        </BButton>
 
       </div>
     </div>
@@ -80,32 +78,37 @@ export default{
 
 <style scoped>
 #infoContainer {
-  position:fixed;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99999;
 }
-.infoBox{
+
+.infoBox {
   width: 30rem;
   background-color: white;
   border-radius: 10px;
   text-align: center;
-  box-shadow:4px 4px 4px ;
+  box-shadow: 4px 4px 4px;
 }
-#navForBackward{
+
+#navForBackward {
   display: flex;
 }
-.rightBtn{
+
+.rightBtn {
   margin-left: auto;
 }
+
 .btn-close {
-display: block;
-margin-left: auto;
-margin-right: 5px;
-margin-top: 2px;
-margin-bottom: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: 5px;
+  margin-top: 2px;
+  margin-bottom: 0;
 }
+
 img {
   width: 70%;
   max-height: 300px;

@@ -34,7 +34,8 @@ export default {
 <template>
   <div id="piano">
     <div class="key white" style="margin-left: 0" @pointerdown="playTone($event, 'C')">
-      <p v-show="checked" class="showNotes">C</p></div>
+      <p v-show="checked" class="showNotes">C</p>
+    </div>
     <div class="key black" @pointerdown="playTone($event, 'C#')">
       <p v-show="checked" class="showNotes showBlack">C#</p>
     </div>
@@ -54,13 +55,17 @@ export default {
       <p v-show="checked" class="showNotes showBlack">F#</p>
     </div>
     <div class="key white" @pointerdown="playTone($event, 'G')">
-      <p v-show="checked" class="showNotes">G</p></div>
+      <p v-show="checked" class="showNotes">G</p>
+    </div>
     <div class="key black" @pointerdown="playTone($event, 'G#')">
-      <p v-show="checked" class="showNotes showBlack">G#</p></div>
+      <p v-show="checked" class="showNotes showBlack">G#</p>
+    </div>
     <div class="key white" @pointerdown="playTone($event, 'A')">
-      <p v-show="checked" class="showNotes">A</p></div>
+      <p v-show="checked" class="showNotes">A</p>
+    </div>
     <div class="key black" @pointerdown="playTone($event, 'A#')">
-      <p v-show="checked" class="showNotes showBlack">A#</p></div>
+      <p v-show="checked" class="showNotes showBlack">A#</p>
+    </div>
     <div class="key white" @pointerdown="playTone($event, 'B')">
       <p v-show="checked" class="showNotes">B</p>
     </div>
@@ -70,16 +75,17 @@ export default {
 <style scoped>
 #piano {
   display: flex;
-  position:relative;
+  position: relative;
+  justify-content: center;
 }
 
-.showNotes{
+.showNotes {
   display: flex;
   font-size: 20px;
 }
 
-.showBlack{
-color: white;
+.showBlack {
+  color: white;
 }
 
 .key {
