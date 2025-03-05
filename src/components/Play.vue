@@ -20,11 +20,12 @@ export default {
       note: lessonsData.lessons[this.$route.params.id - 1].chords[0][0],
       answer: '',
       user: User.loadFromLocalStorage(),
-      i: 0,
+      i: 1,
       x: 0,
       backgroundColor: '#474554',
       conter:0,
       fel:"none",
+      checked: false,
 
     }
   },
@@ -32,7 +33,7 @@ export default {
   created() {
     console.log(this.$route.params.id)
     console.log(lessonsData)
-    console.log(lessonsData.lessons[this.$route.params.id - 1].chords[this.i])
+    console.log(lessonsData.lessons[this.$route.params.id - 1].chords[this.i - 1])
     if (this.user.progress[this.lessonID] !== undefined) {
       this.user.progress[this.lessonID] += 25;
     }
@@ -62,12 +63,24 @@ export default {
     if(this.x < lessonsData.lessons[this.$route.params.id - 1].chords.length){
 
     if(this.i < lessonsData.lessons[this.$route.params.id - 1].chords[this.x].length){
-      this.i++
+      if(this.i === 0 && this.x === 0){
+
+      }
       this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
+      this.i++
       // this.x = this.chords[this.x]
     } else {
-      this.answer = 'Klart'
-      this.fel = "inline"
+      this.i = 0
+      this.x++
+      if(this.x >= lessonsData.lessons[this.$route.params.id - 1].chords.length){
+        this.answer = 'Klart'
+        this.fel = "inline"
+
+      }
+      else{
+        this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
+        this.i++
+      }
     }
 
     }
@@ -79,6 +92,9 @@ export default {
 <template>
   <Question :chords="note" :feedback="answer" :color="backgroundColor"/>
   <Pjano @playTone="emittedTone" />
+  <b-form-checkbox v-model="checked" name="check-button" switch>
+      Show notes <b>{{ checked }}</b>
+    </b-form-checkbox>
   <Info />
   <div :style="{display: fel}">{{conter}}</div>
 </template>
