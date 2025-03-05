@@ -70,7 +70,7 @@ export default {
 <style scoped>
 #piano {
   display: flex;
-  position: relative;
+  position:relative;
 }
 
 .showNotes{
