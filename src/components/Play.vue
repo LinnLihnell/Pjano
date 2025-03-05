@@ -23,8 +23,8 @@ export default {
       i: 1,
       x: 0,
       backgroundColor: '#474554',
-      conter:0,
-      fel:"none",
+      conter: 0,
+      fel: "none",
       checked: false,
 
     }
@@ -51,50 +51,60 @@ export default {
         console.log("rätt")
         this.answer = 'Well done!'
         this.nextLesson()
-         this.backgroundColor='#474554'
-        } else {
+        this.backgroundColor = '#474554'
+      } else {
         console.log("fel")
         this.answer = 'Try again'
-        this.backgroundColor='red'
-        this.conter= this.conter + 1
-        }
+        this.backgroundColor = 'red'
+        this.conter = this.conter + 1
+      }
     },
-    nextLesson(){
-    if(this.x < lessonsData.lessons[this.$route.params.id - 1].chords.length){
+    nextLesson() {
+      if (this.x < lessonsData.lessons[this.$route.params.id - 1].chords.length) {
 
-    if(this.i < lessonsData.lessons[this.$route.params.id - 1].chords[this.x].length){
-      if(this.i === 0 && this.x === 0){
+        if (this.i < lessonsData.lessons[this.$route.params.id - 1].chords[this.x].length) {
+          if (this.i === 0 && this.x === 0) {
 
-      }
-      this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
-      this.i++
-      // this.x = this.chords[this.x]
-    } else {
-      this.i = 0
-      this.x++
-      if(this.x >= lessonsData.lessons[this.$route.params.id - 1].chords.length){
-        this.answer = 'Klart'
-        this.fel = "inline"
+          }
+          this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
+          this.i++
+          // this.x = this.chords[this.x]
+        } else {
+          this.i = 0
+          this.x++
+          if (this.x >= lessonsData.lessons[this.$route.params.id - 1].chords.length) {
+            this.answer = 'Klart'
+            this.fel = "inline"
 
-      }
-      else{
-        this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
-        this.i++
+          }
+          else {
+            this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
+            this.i++
+          }
+        }
+
       }
     }
-
-    }
-  }
   },
 }
 </script>
 
 <template>
-  <Question :chords="note" :feedback="answer" :color="backgroundColor"/>
-  <Pjano @playTone="emittedTone" />
-  <b-form-checkbox v-model="checked" name="check-button" switch>
+  <div class="play-container">
+    <Pjano @playTone="emittedTone" />
+    <Question :chords="note" :feedback="answer" :color="backgroundColor" />
+    <b-form-checkbox v-model="checked" name="check-button" switch>
       Show notes <b>{{ checked }}</b>
     </b-form-checkbox>
-  <Info />
-  <div :style="{display: fel}">{{conter}}</div>
+    <div :style="{ display: fel }">{{ conter }}</div>
+    <Info />
+  </div>
 </template>
+
+<style scoped>
+.play-container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+</style>

@@ -2,23 +2,39 @@
 import { RouterLink } from 'vue-router';
 
 export default {
-    watch: {
-        $route(to, from) {
-            if (to.name === "Playing") {
-                this.showNavbar = false;
-            }
-            else {
-                this.showNavbar = true;
-            }
-        }
-    },
     data() {
         return {
             route: this.$route,
-            showNavbar: true
+            showNavbar: true,
+            windowWidth: window.innerWidth // Initialize window width
+        }
+    },
+    watch: {
+        $route(to, from) {
+            this.checkNavbarVisibility(to.name);
+        },
+        windowWidth(newWidth) {
+            this.checkNavbarVisibility(this.$route.name);
         }
     },
     methods: {
+        checkNavbarVisibility(routeName) {
+            if (routeName === "Playing" && this.windowWidth < 1000) {
+                this.showNavbar = false;
+            } else {
+                this.showNavbar = true;
+            }
+        },
+        updateWindowWidth() {
+            this.windowWidth = window.innerWidth;
+        }
+    },
+    mounted() {
+        window.addEventListener('resize', this.updateWindowWidth);
+        this.checkNavbarVisibility(this.$route.name);
+    },
+    beforeDestroy() {
+        window.removeEventListener('resize', this.updateWindowWidth);
     }
 }
 </script>

@@ -37,4 +37,10 @@ footer {
   text-align: center;
   margin-top: 10px;
 }
+
+@media(max-width: 1000px) {
+  footer {
+    display: none;
+  }
+}
 </style>

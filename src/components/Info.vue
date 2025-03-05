@@ -83,6 +83,8 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99999;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .infoBox {
