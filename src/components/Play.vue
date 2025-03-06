@@ -22,8 +22,9 @@ export default {
       user: User.loadFromLocalStorage(),
       i: 1,
       x: 0,
-      backgroundColor: '#474554',
+      backgroundColor: '#f5f5f5',
       checked: false,
+      tryAgainBtn: null
     }
   },
 
@@ -48,7 +49,7 @@ export default {
         console.log("rätt")
         this.answer = 'Well done!'
         this.nextLesson()
-        this.backgroundColor = '#474554'
+        this.backgroundColor = '#f5f5f5'
       } else {
         console.log("fel")
         this.answer = 'Try again'
@@ -67,6 +68,9 @@ export default {
           this.i = 0
           this.x++
           if (this.x >= lessonsData.lessons[this.$route.params.id - 1].chords.length) {
+            this.answer = 'Lesson finished'
+            this.tryAgainBtn = true
+
 
           }
           else {
@@ -84,7 +88,8 @@ export default {
 <template>
   <div class="play-container">
     <Pjano @playTone="emittedTone" />
-    <Question :chords="note" :feedback="answer" :color="backgroundColor" />
+    <Question :chords="note" :feedback="answer" :color="backgroundColor"
+    :displayAgainBtn="tryAgainBtn" />
     <b-form-checkbox v-model="checked" name="check-button" switch>
       Show notes <b>{{ checked }}</b>
     </b-form-checkbox>
