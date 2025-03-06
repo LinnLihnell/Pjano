@@ -87,12 +87,16 @@ export default {
 
 <template>
   <div class="play-container">
-    <Pjano :checked="checked" @playTone="emittedTone" />
+
     <Question :chords="note" :feedback="answer" :color="backgroundColor"
     :displayAgainBtn="tryAgainBtn" />
     <b-form-checkbox v-model="checked" name="check-button" switch>
-      Show notes <b>{{ checked }}</b>
+      Show notes
     </b-form-checkbox>
+
+    <Pjano :checked="checked" @playTone="emittedTone" />
+
+
     <Info />
   </div>
 </template>
@@ -100,7 +104,7 @@ export default {
 <style scoped>
 .play-container {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -119,5 +123,13 @@ export default {
   font-size: 20px;
   color: white
 }
+
+.form-check {
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+
+
 
 </style>

@@ -45,13 +45,13 @@ export default {
 
 <style scoped>
 .questionContainer {
-
+  /* background-color: #474554; */
+  background-color: #f5f5f5;
   color: black;
-
-  width: 15rem;
   max-width: 100%;
   width: 50%;
   margin: auto;
+  margin-top: 20px;
   margin-bottom: 10px;
   border-radius: 10px;
 }
