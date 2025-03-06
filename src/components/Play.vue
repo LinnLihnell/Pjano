@@ -27,6 +27,7 @@ export default {
       fel: "none",
       checked: false,
 
+
     }
   },
 
@@ -91,10 +92,10 @@ export default {
 
 <template>
   <div class="play-container">
-    <Pjano @playTone="emittedTone" />
+    <Pjano :checked="checked" @playTone="emittedTone" />
     <Question :chords="note" :feedback="answer" :color="backgroundColor" />
-    <b-form-checkbox v-model="checked" name="check-button" switch>
-      Show notes <b>{{ checked }}</b>
+    <b-form-checkbox v-model="checked" class="check-button" switch>
+      Show notes <b></b>
     </b-form-checkbox>
     <div :style="{ display: fel }">{{ conter }}</div>
     <Info />
@@ -107,4 +108,21 @@ export default {
   flex-direction: column-reverse;
   justify-content: space-between;
 }
+
+.check-button {
+  display: flex;
+  justify-content: center;
+}
+
+.showNotes {
+  display: flex;
+  font-size: 20px;
+}
+
+.showBlack {
+  display: flex;
+  font-size: 20px;
+  color: white
+}
+
 </style>
