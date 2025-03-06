@@ -24,7 +24,7 @@ export default {
       x: 0,
       backgroundColor: '#474554',
       conter:0,
-      fel:"none",
+      show:"none",
 
     }
   },
@@ -67,7 +67,7 @@ export default {
       // this.x = this.chords[this.x]
     } else {
       this.answer = 'Klart'
-      this.fel = "inline"
+      this.show = "inline"
     }
 
     }
@@ -80,5 +80,5 @@ export default {
   <Question :chords="note" :feedback="answer" :color="backgroundColor"/>
   <Pjano @playTone="emittedTone" />
   <Info />
-  <div :style="{display: fel}">{{conter}}</div>
+  <div :style="{display: show}">{{conter}}</div>
 </template>
