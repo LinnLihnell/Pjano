@@ -215,6 +215,11 @@
                 "pianoimg/twinkle-twinkle.png",
                 "pianoimg/twinkle-twinkle.png"
             ]
+
+        },
+        {
+            "id": 6,
+            "lesson_name": "Free Play"
         }
     ]
 }
