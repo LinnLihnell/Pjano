@@ -9,7 +9,12 @@ export default {
   data() {
     return {
       playSound: inject("playSound"),
-      currentQuestion: []
+      currentQuestion: [],
+      whiteKeySize: 0,
+      blackKeySize: 0,
+      blackKeyMargin: 0,
+      whiteKeySizeHeight: 0,
+      blackKeySizeHeight: 0,
     }
   },
 
@@ -25,26 +30,66 @@ export default {
     emittedQuestion(question) {
       this.currentQuestion.push(question)
       console.log('fråga mottagen')
+    },
+    calculateKeysSize() {
+      this.screenWidth = window.innerWidth < 1000 ? window.innerWidth : 1000;
+      console.log('Screen width:', this.screenWidth);
+      this.whiteKeySize = this.screenWidth / 7;
+      this.blackKeySize = this.whiteKeySize / 2;
+      this.blackKeyMargin = - this.blackKeySize / 2;
+      this.screenHeight = window.innerHeight > this.screenWidth * 0.55 ? this.screenWidth * 0.55 : window.innerHeight;
+      this.whiteKeySizeHeight = this.screenHeight * 0.7;
+      this.blackKeySizeHeight = this.whiteKeySizeHeight * 0.55;
     }
-
+  },
+  mounted() {
+    window.addEventListener('resize', this.calculateKeysSize);
+    this.calculateKeysSize();
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.calculateKeysSize);
   }
 }
 </script>
 
 <template>
   <div id="piano">
-    <div class="key white" style="margin-left: 0" @pointerdown="playTone($event, 'C')"></div>
-    <div class="key black" @pointerdown="playTone($event, 'C#')"></div>
-    <div class="key white" @pointerdown="playTone($event, 'D')"></div>
-    <div class="key black" @pointerdown="playTone($event, 'D#')"></div>
-    <div class="key white" @pointerdown="playTone($event, 'E')"></div>
-    <div class="key white" style="margin-left: 0" @pointerdown="playTone($event, 'F')"></div>
-    <div class="key black" @pointerdown="playTone($event, 'F#')"></div>
-    <div class="key white" @pointerdown="playTone($event, 'G')"></div>
-    <div class="key black" @pointerdown="playTone($event, 'G#')"></div>
-    <div class="key white" @pointerdown="playTone($event, 'A')"></div>
-    <div class="key black" @pointerdown="playTone($event, 'A#')"></div>
-    <div class="key white" @pointerdown="playTone($event, 'B')"></div>
+    <div class="key white" style="margin-left: 0" @pointerdown="playTone($event, 'C')">
+      <p v-show="checked" class="showNotes">C</p>
+    </div>
+    <div class="key black" @pointerdown="playTone($event, 'C#')">
+      <p v-show="checked" class="showNotes showBlack">C#</p>
+    </div>
+    <div class="key white" @pointerdown="playTone($event, 'D')">
+      <p v-show="checked" class="showNotes">D</p>
+    </div>
+    <div class="key black" @pointerdown="playTone($event, 'D#')">
+      <p v-show="checked" class="showNotes showBlack">D#</p>
+    </div>
+    <div class="key white" @pointerdown="playTone($event, 'E')">
+      <p v-show="checked" class="showNotes">E</p>
+    </div>
+    <div class="key white" style="margin-left: 0" @pointerdown="playTone($event, 'F')">
+      <p v-show="checked" class="showNotes">F</p>
+    </div>
+    <div class="key black" @pointerdown="playTone($event, 'F#')">
+      <p v-show="checked" class="showNotes showBlack">F#</p>
+    </div>
+    <div class="key white" @pointerdown="playTone($event, 'G')">
+      <p v-show="checked" class="showNotes">G</p>
+    </div>
+    <div class="key black" @pointerdown="playTone($event, 'G#')">
+      <p v-show="checked" class="showNotes showBlack">G#</p>
+    </div>
+    <div class="key white" @pointerdown="playTone($event, 'A')">
+      <p v-show="checked" class="showNotes">A</p>
+    </div>
+    <div class="key black" @pointerdown="playTone($event, 'A#')">
+      <p v-show="checked" class="showNotes showBlack">A#</p>
+    </div>
+    <div class="key white" @pointerdown="playTone($event, 'B')">
+      <p v-show="checked" class="showNotes">B</p>
+    </div>
   </div>
 </template>
 
@@ -52,19 +97,32 @@ export default {
 #piano {
   display: flex;
   position: relative;
+  justify-content: center;
+}
+
+.showNotes {
+  display: flex;
+  font-size: 20px;
+}
+
+.showBlack {
+  color: white;
 }
 
 .key {
-  width: 4em;
-  height: 14em;
   border: 1px solid #000;
   box-sizing: border-box;
   cursor: pointer;
-  margin-left: -1.5em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .white {
   background-color: #fff;
+  width: v-bind(whiteKeySize + 'px');
+  height: v-bind(whiteKeySizeHeight + 'px');
+  margin-left: v-bind(blackKeyMargin + 'px');
   z-index: 1;
 }
 
@@ -74,8 +132,9 @@ export default {
 
 .black {
   background-color: #000;
-  width: 3em;
-  height: 8em;
+  width: v-bind(blackKeySize + 'px');
+  height: v-bind(blackKeySizeHeight + 'px');
+  margin-left: v-bind(blackKeyMargin + 'px');
   z-index: 2
 }
 

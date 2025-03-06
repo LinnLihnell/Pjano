@@ -46,7 +46,8 @@
                     "B"
                 ]
             ],
-            "image": "LessonesImages/lessone.1.webp"
+            "image": "LessonesImages/lessone.1.webp",
+            "infoImage": "pianoimg/piano4.png"
         },
         {
             "id": 2,
@@ -73,7 +74,12 @@
                     "B"
                 ]
             ],
-            "image": "LessonesImages/lessone.2.webp"
+            "image": "LessonesImages/lessone.2.webp",
+            "infoImage": [
+                "pianoimg/C chord.png",
+                "pianoimg/D chord.png",
+                "pianoimg/E chord.png"
+            ]
         },
         {
             "id": 3,
@@ -100,7 +106,12 @@
                     "G"
                 ]
             ],
-            "image": "lessonesImages/lessone.3.webp"
+            "image": "lessonesImages/lessone.3.webp",
+            "infoImage": [
+                "pianoimg/A chord.png",
+                "pianoimg/B chord.png",
+                "pianoimg/C chord.png"
+            ]
         },
         {
             "id": 4,
@@ -193,7 +204,12 @@
                     "C"
                 ]
             ],
-            "image": "lessonesImages/lessone.5.webp"
+            "image": "lessonesImages/lessone.5.webp",
+            "infoImage": [
+                "pianoimg/twinkle-twinkle.png",
+                "pianoimg/twinkle-twinkle.png",
+                "pianoimg/twinkle-twinkle.png"
+            ]
         }
     ]
 }
