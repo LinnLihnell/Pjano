@@ -98,6 +98,7 @@ export default {
   display: flex;
   position: relative;
   justify-content: center;
+  border-radius: 10px;
 }
 
 .showNotes {

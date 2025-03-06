@@ -41,7 +41,7 @@ export default {
 
 <template>
     <nav class="navbar" v-if="showNavbar">
-        <img src="/assets/PjanologoNew.png" alt="logo" id="logo">
+        <img src="/assets/Takeitpjanologo.png" alt="logo" id="logo">
         <ul>
             <li>
                 <RouterLink to="/">Home</RouterLink>
