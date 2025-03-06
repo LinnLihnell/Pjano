@@ -2,10 +2,11 @@
     "lessons": [
         {
             "id": 1,
-            "lesson_name": "Learning Each Note",
+            "lesson_name": "Introduction to Piano",
             "information": [
-                "Identify each note on the keyboard",
-                "Practice playing each note",
+                "Notes on a piano are grouped in sets of 12 notes, this is called an octave",
+                "In this lesson you learn to identify each note on the keyboard",
+                "Practice playing each note from left to right on the octave",
                 "Understand the sound of each note"
             ],
             "chords": [
@@ -47,38 +48,42 @@
                 ]
             ],
             "image": "LessonesImages/lessone.1.webp",
-            "infoImage": "pianoimg/piano4.png"
+            "infoImage": ["pianoimg/piano1.png",
+            "pianoimg/piano3.png",
+            "pianoimg/piano5.png"]
         },
         {
             "id": 2,
-            "lesson_name": "Introduction to Piano",
+            "lesson_name": "Learning notes",
             "information": [
-                "Learn the basics of piano",
-                "Understand the layout of the keyboard",
-                "Introduction to musical notes"
+                "Learn the basics of black and white pianokeys.",
+                "The white keys are called naturals and the black keys are called sharps",
+                "The symbol for sharps is # and the symbol for flat is b"
             ],
             "chords": [
                 [
                     "C",
-                    "E",
-                    "G"
-                ],
-                [
                     "D",
-                    "F#",
-                    "A"
+                    "E",
+                    "F",
+                    "G",
+                    "A",
+                    "B"
                 ],
                 [
-                    "E",
+                    "C#",
+                    "D#",
+                    "F#",
                     "G#",
-                    "B"
+                    "A#"
                 ]
+
             ],
             "image": "LessonesImages/lessone.2.webp",
             "infoImage": [
-                "pianoimg/C chord.png",
-                "pianoimg/D chord.png",
-                "pianoimg/E chord.png"
+                "pianoimg/pianowholestepspng.png",
+                "pianoimg/pianonatural.png",
+                "pianoimg/pianoblackkeys.png"
             ]
         },
         {
