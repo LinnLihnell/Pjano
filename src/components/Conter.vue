@@ -9,12 +9,14 @@ export default{
   },
   methods:{
     learn_more(){
-      if(this.feedback==="rätt"){
+      if(this.feedback!==null){
         this.conter = 0
+        console.log("hej")
       } else{
         this.conter = this.conter +1
-        if(this.conter>=2){
-          this.display[0] = this.chord + ", " +this.display[0]
+        if(this.conter>=1){
+          this.display.push(this.chord + ", " +this.display[0]) 
+          console.log(this.display)
         }
       }
     },
