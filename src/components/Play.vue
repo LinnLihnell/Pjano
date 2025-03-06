@@ -24,12 +24,7 @@ export default {
       x: 0,
       backgroundColor: '#f5f5f5',
       checked: false,
-<<<<<<< HEAD
-
-
-=======
       tryAgainBtn: null
->>>>>>> a4c370a8293b683c75b00b27e0fb2ed75e29ab76
     }
   },
 
