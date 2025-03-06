@@ -23,8 +23,6 @@ export default {
       i: 1,
       x: 0,
       backgroundColor: '#474554',
-      conter:0,
-      show:"none",
       checked: false,
     }
   },
@@ -55,7 +53,6 @@ export default {
         console.log("fel")
         this.answer = 'Try again'
         this.backgroundColor = 'red'
-        this.conter = this.conter + 1
       }
     },
     nextLesson() {
@@ -70,8 +67,6 @@ export default {
           this.i = 0
           this.x++
           if (this.x >= lessonsData.lessons[this.$route.params.id - 1].chords.length) {
-            this.answer = 'Klart'
-            this.show = "inline"
 
           }
           else {
@@ -93,7 +88,6 @@ export default {
     <b-form-checkbox v-model="checked" name="check-button" switch>
       Show notes <b>{{ checked }}</b>
     </b-form-checkbox>
-    <div :style="{ display: show }">{{ conter }}</div>
     <Info />
   </div>
 </template>
