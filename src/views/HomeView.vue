@@ -33,7 +33,7 @@ export default {
 <div id="homecontainer">
   <div id="welcome-card">
     <h1>Welcome to Pjano!</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate qui, quidem numquam perspiciatis quod esse, error porro, sit reprehenderit impedit facere laudantium animi blanditiis quaerat ipsam quam laborum sed ad!</p>
+    <p>Ready to learn the piano? Whether you're a complete beginner or just want to brush up on your skills, this site is here to guide you every step of the way. Explore interactive lessons, fun exercises, and simple tutorials that will help you play your first song in no time! Let’s start your musical journey together and make learning the piano easy and enjoyable.</p>
   </div>
   <div class="card" @click="userHistory">
     <h2>Quick start</h2>

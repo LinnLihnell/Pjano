@@ -22,12 +22,14 @@ export default {
       user: User.loadFromLocalStorage(),
       i: 1,
       x: 0,
-      backgroundColor: '#474554',
-      conter: 0,
-      fel: "none",
+      backgroundColor: '#f5f5f5',
       checked: false,
+<<<<<<< HEAD
 
 
+=======
+      tryAgainBtn: null
+>>>>>>> a4c370a8293b683c75b00b27e0fb2ed75e29ab76
     }
   },
 
@@ -52,20 +54,17 @@ export default {
         console.log("rätt")
         this.answer = 'Well done!'
         this.nextLesson()
-        this.backgroundColor = '#474554'
+        this.backgroundColor = '#f5f5f5'
       } else {
         console.log("fel")
         this.answer = 'Try again'
         this.backgroundColor = 'red'
-        this.conter = this.conter + 1
       }
     },
     nextLesson() {
       if (this.x < lessonsData.lessons[this.$route.params.id - 1].chords.length) {
-
         if (this.i < lessonsData.lessons[this.$route.params.id - 1].chords[this.x].length) {
           if (this.i === 0 && this.x === 0) {
-
           }
           this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
           this.i++
@@ -74,8 +73,9 @@ export default {
           this.i = 0
           this.x++
           if (this.x >= lessonsData.lessons[this.$route.params.id - 1].chords.length) {
-            this.answer = 'Klart'
-            this.fel = "inline"
+            this.answer = 'Lesson finished'
+            this.tryAgainBtn = true
+
 
           }
           else {
@@ -93,11 +93,11 @@ export default {
 <template>
   <div class="play-container">
     <Pjano :checked="checked" @playTone="emittedTone" />
-    <Question :chords="note" :feedback="answer" :color="backgroundColor" />
-    <b-form-checkbox v-model="checked" class="check-button" switch>
-      Show notes <b></b>
+    <Question :chords="note" :feedback="answer" :color="backgroundColor"
+    :displayAgainBtn="tryAgainBtn" />
+    <b-form-checkbox v-model="checked" name="check-button" switch>
+      Show notes <b>{{ checked }}</b>
     </b-form-checkbox>
-    <div :style="{ display: fel }">{{ conter }}</div>
     <Info />
   </div>
 </template>
