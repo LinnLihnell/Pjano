@@ -4,12 +4,14 @@ import Question from './Question.vue';
 import Info from './Info.vue';
 import lessonsData from '../../assets/Lessones.json';
 import User from '../models/User';
+import Conter from './Conter.vue';
 
 export default {
   components: {
     Pjano,
     Question,
-    Info
+    Info,
+    Conter
 
   },
 
@@ -87,7 +89,7 @@ export default {
 
 <template>
   <div class="play-container">
-
+    <Conter :chord="note" :feedback="answer"/>
     <Question :chords="note" :feedback="answer" :color="backgroundColor"
     :displayAgainBtn="tryAgainBtn" />
     <b-form-checkbox v-model="checked" name="check-button" switch>
