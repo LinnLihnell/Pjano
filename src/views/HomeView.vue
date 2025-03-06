@@ -35,7 +35,7 @@ export default {
     <h1>Welcome to Pjano!</h1>
     <p>Ready to learn the piano? Whether you're a complete beginner or just want to brush up on your skills, this site is here to guide you every step of the way. Explore interactive lessons, fun exercises, and simple tutorials that will help you play your first song in no time! Let’s start your musical journey together and make learning the piano easy and enjoyable.</p>
   </div>
-  <div class="card" @click="userHistory">
+  <div class="card" @click="$router.push({ path:'/playing/1'})">
     <h2>Quick start</h2>
   </div>
   <div class="card" @click="$router.push({ path:'/lessons'})">

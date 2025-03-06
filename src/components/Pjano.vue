@@ -107,6 +107,8 @@ export default {
   display: flex;
   position: relative;
   justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 
