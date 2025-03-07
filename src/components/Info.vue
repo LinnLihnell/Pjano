@@ -25,6 +25,9 @@ export default {
       facts: lessonsData.lessons[this.$route.params.id - 1]
     }
   },
+  props: {
+
+  },
   created() {
     // console.log(lessonsData)
     console.log(lessonsData.lessons[this.$route.params.id - 1].information[this.currentIndex])

@@ -11,14 +11,26 @@
             ],
             "chords": [
                 [
-                    "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
-
+                    "C",
+                    "C#",
+                    "D",
+                    "D#",
+                    "E",
+                    "F",
+                    "F#",
+                    "G",
+                    "G#",
+                    "A",
+                    "A#",
+                    "B"
                 ]
             ],
             "image": "LessonesImages/lessone.1.webp",
-            "infoImage": ["pianoimg/piano1.png",
-            "pianoimg/piano3.png",
-            "pianoimg/piano5.png"]
+            "infoImage": [
+                "pianoimg/piano1.png",
+                "pianoimg/piano3.png",
+                "pianoimg/piano5.png"
+            ]
         },
         {
             "id": 2,
@@ -45,7 +57,6 @@
                     "G#",
                     "A#"
                 ]
-
             ],
             "image": "LessonesImages/lessone.2.webp",
             "infoImage": [
@@ -63,7 +74,12 @@
                 "Introduction to chord progressions"
             ],
             "chordname": [
-                "C", "Cm", "D", "Dm", "E", "Em"
+                "C",
+                "Cm",
+                "D",
+                "Dm",
+                "E",
+                "Em"
             ],
             "chords": [
                 [
@@ -109,45 +125,40 @@
         },
         {
             "id": 4,
-            "lesson_name": "Baa Baa Black Sheep",
+            "lesson_name": "The Itsy Bitsy Spider",
             "information": [
-                "Learn the melody of Baa Baa Black Sheep"
+                "Learn the melody of The Itsy Bitsy Spider"
             ],
             "chords": [
                 [
                     "C",
                     "C",
-                    "G",
-                    "G",
-                    "A",
-                    "A",
-                    "G",
-                    "G",
-                    "G",
-                    "F",
-                    "F",
+                    "C",
+                    "D",
                     "E",
                     "E",
                     "D",
                     "C",
+                    "D",
+                    "E",
                     "C",
-                    "G",
-                    "G",
-                    "A",
-                    "A",
-                    "G",
-                    "G",
-                    "G",
+                    "C",
+                    "E",
+                    "E",
                     "F",
+                    "G",
+                    "G",
                     "F",
                     "E",
-                    "D",
-                    "C"
+                    "F",
+                    "G",
+                    "E"
                 ]
-
             ],
             "image": "lessonesImages/lessone.4.webp",
-            "infoImage": []
+            "infoImage": [
+                "pianoimg/itsybitsyspider.jpg"
+            ]
         },
         {
             "id": 5,
@@ -215,7 +226,6 @@
             "infoImage": [
                 "pianoimg/twinkle-twinkle.png"
             ]
-
         },
         {
             "id": 6,
