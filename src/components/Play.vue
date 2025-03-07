@@ -113,6 +113,11 @@ export default {
             this.answer = 'Lesson finished'
             this.tryAgainBtn = true
 
+            let lessonsCount = parseInt(localStorage.getItem('lessonsCount') || '0')
+            lessonsCount += 1
+            localStorage.setItem('lessonsCount', lessonsCount)
+            console.log("Lessons count: ", lessonsCount)
+
             this.chordName=null
 
 
@@ -132,8 +137,8 @@ export default {
 
 <template>
   <div class="play-container">
-    <Conter :chord="note" :feedback="answer"/>
-    <Question :chords="note" :chordsname="chordName":feedback="answer" :color="backgroundColor"
+    <Conter v-if="!freePlay" :chord="note" :feedback="answer"/>
+    <Question v-if="!freePlay" :chords="note" :chordsname="chordName":feedback="answer" :color="backgroundColor"
     :displayAgainBtn="tryAgainBtn" />
     <b-form-checkbox v-model="checked" name="check-button" switch>
       Show notes
