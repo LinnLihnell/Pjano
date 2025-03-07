@@ -217,9 +217,17 @@
             ]
 
         },
+
         {
             "id": 6,
-            "lesson_name": "Free Play"
+            "lesson_name": "Free play",
+            "information": [],
+            "chords": [[]],
+            "image": "LessonesImages/extra.webp",
+            "infoImage": []
+
+
         }
+
     ]
 }

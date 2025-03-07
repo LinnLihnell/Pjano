@@ -15,7 +15,7 @@
   <div class="profilecontainer" v-else>
     <h1>Welcome {{ user.username }}</h1>
     <div class="results">
-      <p>Number of sessions: {{ sessionCount }} </p>
+      <p>Lessons completed: {{ lessonsCount }} </p>
     </div>
     <button @click="removeProfile" class="btn btn-danger">Delete profile</button>
   </div>
@@ -31,7 +31,7 @@ export default {
       userName: '',
       isReturningUser:false,
       deleteMessage: '',
-      sessionCount:0
+      lessonsCount: null
     }
   },
   methods: {
@@ -44,7 +44,7 @@ export default {
     },
     removeProfile(){
       localStorage.removeItem('user')
-      localStorage.removeItem('sessionCount')
+      localStorage.removeItem('lessonsCount')
       localStorage.setItem('isReturningUser', 'false')
       this.user=new User()
       this.userName=""
@@ -65,13 +65,11 @@ export default {
       this.isReturningUser=false
     }
 
-    let sessionCount=localStorage.getItem('sessionCount')
-    if(!sessionCount){
-      sessionCount=0
+    let lessonsCount = localStorage.getItem('lessonsCount')
+    if(!lessonsCount){
+      lessonsCount=0
     }
-    sessionCount=parseInt(sessionCount) + 1
-    localStorage.setItem('sessionCount', sessionCount)
-    this.sessionCount=sessionCount
+    this.lessonsCount = parseInt(lessonsCount)
 
   }
 

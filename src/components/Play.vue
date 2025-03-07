@@ -26,7 +26,8 @@ export default {
       x: 0,
       backgroundColor: '#f5f5f5',
       checked: false,
-      tryAgainBtn: null
+      tryAgainBtn: null,
+      freePlay: this.$route.params.id === '6',
     }
   },
 
@@ -72,6 +73,10 @@ export default {
           if (this.x >= lessonsData.lessons[this.$route.params.id - 1].chords.length) {
             this.answer = 'Lesson finished'
             this.tryAgainBtn = true
+            let lessonsCount = parseInt(localStorage.getItem('lessonsCount') || '0')
+            lessonsCount += 1
+            localStorage.setItem('lessonsCount', lessonsCount)
+            console.log("Lessons count: ", lessonsCount)
 
 
           }
@@ -89,8 +94,8 @@ export default {
 
 <template>
   <div class="play-container">
-    <Conter :chord="note" :feedback="answer"/>
-    <Question :chords="note" :feedback="answer" :color="backgroundColor"
+    <Conter v-if="!freePlay" :chord="note" :feedback="answer"/>
+    <Question v-if="!freePlay" :chords="note" :feedback="answer" :color="backgroundColor"
     :displayAgainBtn="tryAgainBtn" />
     <b-form-checkbox v-model="checked" name="check-button" switch>
       Show notes
@@ -99,7 +104,7 @@ export default {
     <Pjano :checked="checked" @playTone="emittedTone" />
 
 
-    <Info />
+    <Info v-if="!freePlay" />
   </div>
 </template>
 

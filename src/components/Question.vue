@@ -5,6 +5,7 @@ export default {
       displayAgainBtn: false
     }
   },
+
   methods: {
     reloadPage(){
       window.location.reload()

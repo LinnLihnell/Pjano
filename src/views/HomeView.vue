@@ -41,6 +41,9 @@ export default {
   <div class="card" @click="$router.push({ path:'/lessons'})">
     <h2>Choose your lesson</h2>
   </div>
+  <div class="card" @click="$router.push({ path: '/playing/6'})">
+    <h2>Free play</h2>
+  </div>
   <div class="card" @click="$router.push({ path: '/facts'})">
     <h2>Facts</h2>
   </div>
