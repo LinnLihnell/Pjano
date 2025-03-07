@@ -20,6 +20,9 @@ export default {
       clickedNote: [],
       lessonID: this.$route.params.id,
       note: lessonsData.lessons[this.$route.params.id - 1].chords[0][0],
+      chordName: lessonsData.lessons[this.$route.params.id - 1].chordname
+      ? lessonsData.lessons[this.$route.params.id -1].chordname[0]
+      : null,
       answer: '',
       user: User.loadFromLocalStorage(),
       i: 1,
@@ -58,20 +61,57 @@ export default {
         this.backgroundColor = 'red'
       }
     },
-    nextLesson() {
+    // nextLesson(){
+    //   const lesson= lessonsData.lessons[this.$route.params.id -1]
+
+    //   if (lesson.chordname && lesson.chordname[this.x]){
+    //     this.chordName = lesson.chordname[this.x]
+    //   } else{
+    //     this.chordName = null
+    //   }
+    //   if(this.x<lesson.chords.length){
+    //     if(this.i<lesson.chords[this.x].length){
+    //       this.note = lesson.chords[this.x][this.i]
+    //       this.i++
+    //     } else {
+    //       this.i =0
+    //       this.x++
+    //       if(lesson.chordname && lesson.chordname[this.x]){
+    //         this.chordName = lesson.chordname[this.x]
+    //       } else {
+    //         this.chordName =null
+    //       }
+    //       // this.chordName = lesson.chordname[this.x]
+    //       // lessonsData.lessons[this.$route.params.id - 1].chordname[this.x]
+    //       if(this.x >= lesson.chords.length){
+    //         this.note = lesson.chords[this.x][this.i]
+    //         this.i++
+    //       } else {
+    //         this.answer = 'Lesson finished'
+    //         this.tryAgainBtn = true
+    //         // this.chordName=null
+    //       }
+    //     }
+    //   }
+    // }
+    nextLesson() {{
       if (this.x < lessonsData.lessons[this.$route.params.id - 1].chords.length) {
+        if( this.chordName !== null){this.chordName = lessonsData.lessons[this.$route.params.id - 1].chordname[this.x]}
+
+
         if (this.i < lessonsData.lessons[this.$route.params.id - 1].chords[this.x].length) {
-          if (this.i === 0 && this.x === 0) {
-          }
           this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
           this.i++
-          // this.x = this.chords[this.x]
+
         } else {
           this.i = 0
           this.x++
+          if( this.chordName !== null){this.chordName = lessonsData.lessons[this.$route.params.id - 1].chordname[this.x]}
+
           if (this.x >= lessonsData.lessons[this.$route.params.id - 1].chords.length) {
             this.answer = 'Lesson finished'
             this.tryAgainBtn = true
+            this.chordName=null
 
 
           }
@@ -82,7 +122,7 @@ export default {
         }
 
       }
-    }
+    }}
   },
 }
 </script>
@@ -90,7 +130,7 @@ export default {
 <template>
   <div class="play-container">
     <Conter :chord="note" :feedback="answer"/>
-    <Question :chords="note" :feedback="answer" :color="backgroundColor"
+    <Question :chords="note" :chordsname="chordName":feedback="answer" :color="backgroundColor"
     :displayAgainBtn="tryAgainBtn" />
     <b-form-checkbox v-model="checked" name="check-button" switch>
       Show notes

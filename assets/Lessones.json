@@ -11,40 +11,8 @@
             ],
             "chords": [
                 [
-                    "C"
-                ],
-                [
-                    "C#"
-                ],
-                [
-                    "D"
-                ],
-                [
-                    "D#"
-                ],
-                [
-                    "E"
-                ],
-                [
-                    "F"
-                ],
-                [
-                    "F#"
-                ],
-                [
-                    "G"
-                ],
-                [
-                    "G#"
-                ],
-                [
-                    "A"
-                ],
-                [
-                    "A#"
-                ],
-                [
-                    "B"
+                    "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
+
                 ]
             ],
             "image": "LessonesImages/lessone.1.webp",
@@ -94,64 +62,98 @@
                 "Practice chord transitions",
                 "Introduction to chord progressions"
             ],
+            "chordname": [
+                "C", "Cm", "D", "Dm", "E", "Em"
+            ],
             "chords": [
-                [
-                    "A",
-                    "C#",
-                    "E"
-                ],
-                [
-                    "B",
-                    "D#",
-                    "F#"
-                ],
                 [
                     "C",
                     "E",
                     "G"
+                ],
+                [
+                    "C",
+                    "D#",
+                    "G"
+                ],
+                [
+                    "D",
+                    "F#",
+                    "A"
+                ],
+                [
+                    "D",
+                    "F",
+                    "A"
+                ],
+                [
+                    "E",
+                    "G#",
+                    "B"
+                ],
+                [
+                    "E",
+                    "G",
+                    "B"
                 ]
             ],
             "image": "lessonesImages/lessone.3.webp",
             "infoImage": [
-                "pianoimg/A chord.png",
-                "pianoimg/B chord.png",
-                "pianoimg/C chord.png"
+                "pianoimg/C chord.png",
+                "pianoimg/Cm chord.png",
+                "pianoimg/D chord.png",
+                "pianoimg/Dm chord.png",
+                "pianoimg/E chord.png",
+                "pianoimg/Em chord.png"
             ]
         },
         {
             "id": 4,
-            "lesson_name": "Advanced Techniques",
+            "lesson_name": "Baa Baa Black Sheep",
             "information": [
-                "Learn advanced chord voicings",
-                "Practice arpeggios",
-                "Introduction to improvisation"
+                "Learn the melody of Baa Baa Black Sheep"
             ],
             "chords": [
                 [
-                    "F",
-                    "A",
-                    "C"
-                ],
-                [
+                    "C",
+                    "C",
                     "G",
-                    "B",
-                    "D"
-                ],
-                [
+                    "G",
                     "A",
-                    "C#",
-                    "E"
+                    "A",
+                    "G",
+                    "G",
+                    "G",
+                    "F",
+                    "F",
+                    "E",
+                    "E",
+                    "D",
+                    "C",
+                    "C",
+                    "G",
+                    "G",
+                    "A",
+                    "A",
+                    "G",
+                    "G",
+                    "G",
+                    "F",
+                    "F",
+                    "E",
+                    "D",
+                    "C"
                 ]
+
             ],
-            "image": "lessonesImages/lessone.4.webp"
+            "image": "lessonesImages/lessone.4.webp",
+            "infoImage": []
         },
         {
             "id": 5,
             "lesson_name": "Twinkle, Twinkle, Little Star",
             "information": [
-                "Learn the melody of Twinkle, Twinkle, Little Star",
-                "Practice playing with both hands",
-                "Understand basic song structure"
+                "Learn the melody of Twinkle, Twinkle, Little Star"
             ],
             "chords": [
                 [
@@ -211,8 +213,6 @@
             ],
             "image": "lessonesImages/lessone.5.webp",
             "infoImage": [
-                "pianoimg/twinkle-twinkle.png",
-                "pianoimg/twinkle-twinkle.png",
                 "pianoimg/twinkle-twinkle.png"
             ]
 

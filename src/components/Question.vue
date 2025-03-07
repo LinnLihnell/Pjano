@@ -1,10 +1,6 @@
 <script>
 export default {
-  data() {
-    return {
-      displayAgainBtn: false
-    }
-  },
+
   methods: {
     reloadPage(){
       window.location.reload()
@@ -13,6 +9,16 @@ export default {
   props: {
     chords: {
       type: String
+    },
+    chordsname:{
+      type: String,
+      required:false,
+      // default:""
+      // validator: function(value){
+      //   return value && value.length > 0
+      // },
+
+
     },
     feedback: {
       type: String
@@ -31,6 +37,7 @@ export default {
 <template>
   <div class="questionContainer" :style="{ backgroundColor: color }">
     <p>{{ feedback }}</p>
+    <p v-if="chordsname !== null">Play chord: {{ chordsname }}</p>
     <p v-if="!displayAgainBtn" >Next: Press {{ chords }}</p>
     <p v-if="displayAgainBtn" >Try another lesson?</p>
     <div class="navButtons" >
