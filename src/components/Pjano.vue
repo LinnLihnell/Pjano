@@ -23,7 +23,7 @@ export default {
       blackKeySize: 0,
       blackKeyMargin: 0,
       whiteKeySizeHeight: 0,
-      blackKeySizeHeight: 0,
+      blackKeySizeHeight: 0
     }
   },
 
@@ -35,7 +35,6 @@ export default {
       }
       this.$emit('playTone', value)
     },
-
     emittedQuestion(question) {
       this.currentQuestion.push(question)
       console.log('fråga mottagen')
@@ -62,18 +61,18 @@ export default {
 </script>
 
 <template>
-  <div id="piano">
+  <div id="piano" @touchmove.prevent>
     <div class="key white" style="margin-left: 0" @pointerdown="playTone($event, 'C')">
       <p v-show="checked" class="showNotes">C</p>
     </div>
     <div class="key black" @pointerdown="playTone($event, 'C#')">
-      <p v-show="checked" :style="{ color: 'white'}">C#</p>
+      <p v-show="checked" :style="{ color: 'white' }">C#</p>
     </div>
     <div class="key white" @pointerdown="playTone($event, 'D')">
       <p v-show="checked" class="showNotes">D</p>
     </div>
     <div class="key black" @pointerdown="playTone($event, 'D#')">
-      <p v-show="checked" :style="{ color: 'white'}">D#</p>
+      <p v-show="checked" :style="{ color: 'white' }">D#</p>
     </div>
     <div class="key white" @pointerdown="playTone($event, 'E')">
       <p v-show="checked" class="showNotes">E</p>
@@ -82,7 +81,7 @@ export default {
       <p v-show="checked" class="showNotes">F</p>
     </div>
     <div class="key black" @pointerdown="playTone($event, 'F#')">
-      <p v-show="checked" :style="{ color: 'white'}">F#</p>
+      <p v-show="checked" :style="{ color: 'white' }">F#</p>
     </div>
     <div class="key white" @pointerdown="playTone($event, 'G')">
       <p v-show="checked" class="showNotes">G</p>
@@ -94,7 +93,7 @@ export default {
       <p v-show="checked" class="showNotes">A</p>
     </div>
     <div class="key black" @pointerdown="playTone($event, 'A#')">
-      <p v-show="checked" :style="{ color: 'white'}">A#</p>
+      <p v-show="checked" :style="{ color: 'white' }">A#</p>
     </div>
     <div class="key white" @pointerdown="playTone($event, 'B')">
       <p v-show="checked" class="showNotes">B</p>
@@ -109,6 +108,9 @@ export default {
   justify-content: center;
   font-size: 25px;
   font-weight: bold;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 

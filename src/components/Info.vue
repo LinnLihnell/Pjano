@@ -85,7 +85,7 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 99999;
+  z-index: 2;
   max-width: 100%;
   max-height: 100%;
 }
@@ -96,6 +96,7 @@ export default {
   border-radius: 10px;
   text-align: center;
   box-shadow: 4px 4px 4px;
+  max-width: fit-content;
 }
 
 #navForBackward {

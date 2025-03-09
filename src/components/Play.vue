@@ -21,8 +21,8 @@ export default {
       lessonID: this.$route.params.id,
       note: lessonsData.lessons[this.$route.params.id - 1].chords[0][0],
       chordName: lessonsData.lessons[this.$route.params.id - 1].chordname
-      ? lessonsData.lessons[this.$route.params.id -1].chordname[0]
-      : null,
+        ? lessonsData.lessons[this.$route.params.id - 1].chordname[0]
+        : null,
       answer: '',
       user: User.loadFromLocalStorage(),
       i: 1,
@@ -95,57 +95,58 @@ export default {
     //     }
     //   }
     // }
-    nextLesson() {{
-      if (this.x < lessonsData.lessons[this.$route.params.id - 1].chords.length) {
-        if( this.chordName !== null){this.chordName = lessonsData.lessons[this.$route.params.id - 1].chordname[this.x]}
+    nextLesson() {
+      {
+        if (this.x < lessonsData.lessons[this.$route.params.id - 1].chords.length) {
+          if (this.chordName !== null) { this.chordName = lessonsData.lessons[this.$route.params.id - 1].chordname[this.x] }
 
 
-        if (this.i < lessonsData.lessons[this.$route.params.id - 1].chords[this.x].length) {
-          this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
-          this.i++
-
-        } else {
-          this.i = 0
-          this.x++
-          if( this.chordName !== null){this.chordName = lessonsData.lessons[this.$route.params.id - 1].chordname[this.x]}
-
-          if (this.x >= lessonsData.lessons[this.$route.params.id - 1].chords.length) {
-            this.answer = 'Lesson finished'
-            this.tryAgainBtn = true
-
-            let lessonsCount = parseInt(localStorage.getItem('lessonsCount') || '0')
-            lessonsCount += 1
-            localStorage.setItem('lessonsCount', lessonsCount)
-            console.log("Lessons count: ", lessonsCount)
-
-            this.chordName=null
-
-
-
-          }
-          else {
+          if (this.i < lessonsData.lessons[this.$route.params.id - 1].chords[this.x].length) {
             this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
             this.i++
-          }
-        }
 
+          } else {
+            this.i = 0
+            this.x++
+            if (this.chordName !== null) { this.chordName = lessonsData.lessons[this.$route.params.id - 1].chordname[this.x] }
+
+            if (this.x >= lessonsData.lessons[this.$route.params.id - 1].chords.length) {
+              this.answer = 'Lesson finished'
+              this.tryAgainBtn = true
+
+              let lessonsCount = parseInt(localStorage.getItem('lessonsCount') || '0')
+              lessonsCount += 1
+              localStorage.setItem('lessonsCount', lessonsCount)
+              console.log("Lessons count: ", lessonsCount)
+
+              this.chordName = null
+
+
+
+            }
+            else {
+              this.note = lessonsData.lessons[this.$route.params.id - 1].chords[this.x][this.i]
+              this.i++
+            }
+          }
+
+        }
       }
-    }}
+    }
   },
 }
 </script>
 
 <template>
   <div class="play-container">
-    <Conter v-if="!freePlay" :chord="note" :feedback="answer"/>
-    <Question v-if="!freePlay" :chords="note" :chordsname="chordName":feedback="answer" :color="backgroundColor"
-    :displayAgainBtn="tryAgainBtn" />
+    <Conter v-if="!freePlay" :chord="note" :feedback="answer" />
+    <Question v-if="!freePlay" :chords="note" :chordsname="chordName" :feedback="answer" :color="backgroundColor"
+      :displayAgainBtn="tryAgainBtn" />
     <b-form-checkbox v-model="checked" name="check-button" switch>
       Show notes
     </b-form-checkbox>
 
     <Pjano :checked="checked" @playTone="emittedTone" />
-
 
     <Info v-if="!freePlay" />
   </div>
@@ -178,8 +179,4 @@ export default {
   margin: auto;
   margin-bottom: 10px;
 }
-
-
-
-
 </style>
