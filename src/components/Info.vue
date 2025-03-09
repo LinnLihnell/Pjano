@@ -68,7 +68,8 @@ export default {
       <img :src="facts[currentIndex].picture" alt="Picture"> -->
       <h3>{{ facts.lesson_name }}</h3>
       <p>{{ facts.information[this.currentIndex] }}</p>
-      <img :src="`/assets/${facts.infoImage[this.currentIndex]}`" alt="image">
+      <img :src="`/assets/${facts.infoImage[this.currentIndex]}`" alt="image" />
+
       <div id="navForBackward">
         <BButton @click="previousFact" variant="outline-secondary"><i class="bi bi-arrow-left"></i></BButton>
         <BButton class="rightBtn" variant="outline-secondary" @click="nextFact"><i class="bi bi-arrow-right"></i>
