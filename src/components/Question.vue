@@ -1,24 +1,17 @@
 <script>
 export default {
-
-  data() {
-    return {
-      displayAgainBtn: false
-    }
-  },
-
   methods: {
-    reloadPage(){
+    reloadPage() {
       window.location.reload()
     }
-    },
+  },
   props: {
     chords: {
       type: String
     },
-    chordsname:{
+    chordsname: {
       type: String,
-      required:false,
+      required: false,
       // default:""
       // validator: function(value){
       //   return value && value.length > 0
@@ -33,32 +26,34 @@ export default {
       type: String
     },
     displayAgainBtn: {
-      type: Boolean
+      type: Boolean,
+      default: false
     }
   }
 }
 </script>
 
-
 <template>
   <div class="questionContainer" :style="{ backgroundColor: color }">
-    <p>{{ feedback }}</p>
-    <p v-if="chordsname !== null">Play chord: {{ chordsname }}</p>
-    <p v-if="!displayAgainBtn" >Next: Press {{ chords }}</p>
-    <p v-if="displayAgainBtn" >Try another lesson?</p>
-    <div class="navButtons" >
-    <BButton @click="$router.push({path: '/'})"
-     variant="outline-secondary">Home<i class="bi bi-box-arrow-left"></i></BButton>
-    <BButton v-if="displayAgainBtn" @click="reloadPage"  variant="outline-secondary">Try again <i class="bi bi-arrow-counterclockwise"></i></BButton>
-    <BButton @click="$router.push({path: '/lessons'})" variant="outline-secondary">Lessons <i class="bi bi-forward"></i></BButton>
-  </div>
+    <div class="textContainer">
+      <p>{{ feedback }}</p>
+      <p v-if="chordsname !== null">Play chord: {{ chordsname }}</p>
+      <p v-if="!displayAgainBtn">Next: Press {{ chords }}</p>
+      <p v-if="displayAgainBtn">Try another lesson?</p>
+    </div>
+    <div class="navButtons">
+      <BButton @click="$router.push({ path: '/' })" variant="outline-secondary">Home<i class="bi bi-box-arrow-left"></i>
+      </BButton>
+      <BButton v-if="displayAgainBtn" @click="reloadPage" variant="outline-secondary">Try again <i
+          class="bi bi-arrow-counterclockwise"></i></BButton>
+      <BButton @click="$router.push({ path: '/lessons' })" variant="outline-secondary">Lessons <i
+          class="bi bi-forward"></i></BButton>
+    </div>
   </div>
 </template>
 
-
 <style scoped>
 .questionContainer {
-  /* background-color: #474554; */
   background-color: #f5f5f5;
   color: black;
   max-width: 100%;
@@ -67,11 +62,18 @@ export default {
   margin-top: 20px;
   margin-bottom: 10px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textContainer {
+  width: 100%;
 }
 
 p {
   text-align: center;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 button {
@@ -85,10 +87,34 @@ button {
   margin: 5px;
 }
 
-.navButtons{
+.navButtons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 
+@media (max-width: 1000px) {
+  .questionContainer {
+    margin: 10px 0 10px 10px;
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1000px) and (max-height: 600px) {
+  .questionContainer {
+    margin: 5px 0 5px 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .questionContainer {
+    margin: 2px 0 0 10px;
+  }
+}
 </style>

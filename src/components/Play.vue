@@ -31,6 +31,9 @@ export default {
       checked: false,
       tryAgainBtn: null,
       freePlay: this.$route.params.id === '6',
+      questionsWidth: 0,
+      showNotesWidth: 0,
+      questionCheckboxHeight: 0,
     }
   },
 
@@ -132,24 +135,38 @@ export default {
 
         }
       }
+    },
+    calculateKeysSize() {
+      this.screenWidth = window.innerWidth < 1000 ? window.innerWidth : 1000;
+      this.questionsWidth = this.screenWidth * 0.8;
+      this.showNotesWidth = this.screenWidth * 0.2;
+      this.questionCheckboxHeight = this.screenWidth * 0.3;
     }
   },
+  mounted() {
+    window.addEventListener('resize', this.calculateKeysSize);
+    this.calculateKeysSize();
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.calculateKeysSize);
+  }
 }
 </script>
 
 <template>
   <div class="play-container">
-    <Conter v-if="!freePlay" :chord="note" :feedback="answer" />
-    <Question v-if="!freePlay" :chords="note" :chordsname="chordName" :feedback="answer" :color="backgroundColor"
-      :displayAgainBtn="tryAgainBtn" />
-    <b-form-checkbox v-model="checked" name="check-button" switch>
-      Show notes
-    </b-form-checkbox>
-
-    <Pjano :checked="checked" @playTone="emittedTone" />
-
-    <Info v-if="!freePlay" />
+    <div class="question-checkbox-container">
+      <Question class="question" v-if="!freePlay" :chords="note" :chordsname="chordName" :feedback="answer"
+        :color="backgroundColor" :displayAgainBtn="tryAgainBtn" />
+      <b-form-checkbox class="show-notes" v-model="checked" name="check-button" switch>
+        Show notes
+      </b-form-checkbox>
+    </div>
+    <div class="pjano-container">
+      <Pjano :checked="checked" @playTone="emittedTone" />
+    </div>
   </div>
+  <Info v-if="!freePlay" />
 </template>
 
 <style scoped>
@@ -159,24 +176,60 @@ export default {
   justify-content: space-between;
 }
 
+.question-checkbox-container {
+  height: v-bind(questionCheckboxHeight + 'px');
+}
+
+.pjano-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.question {
+  display: flex;
+  justify-content: center;
+  width: v-bind(questionsWidth + 'px');
+}
+
+.show-notes {
+  display: flex;
+  justify-content: center;
+  width: v-bind(showNotesWidth + 'px');
+}
+
 .check-button {
   display: flex;
   justify-content: center;
 }
 
-.showNotes {
-  display: flex;
-  font-size: 20px;
-}
-
 .showBlack {
   display: flex;
   font-size: 20px;
-  color: white
+  color: white;
 }
 
 .form-check {
   margin: auto;
   margin-bottom: 10px;
+}
+
+@media (max-width: 1000px) {
+  .pjano-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .question-checkbox-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
 </style>
