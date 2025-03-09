@@ -46,7 +46,7 @@ export default {
       this.blackKeySize = this.whiteKeySize / 2;
       this.blackKeyMargin = - this.blackKeySize / 2;
       this.screenHeight = window.innerHeight > this.screenWidth * 0.55 ? this.screenWidth * 0.55 : window.innerHeight;
-      this.whiteKeySizeHeight = this.screenHeight * 0.7;
+      this.whiteKeySizeHeight = this.screenHeight * 0.6;
       this.blackKeySizeHeight = this.whiteKeySizeHeight * 0.55;
     }
   },
