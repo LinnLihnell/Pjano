@@ -4,14 +4,13 @@ import Question from './Question.vue';
 import Info from './Info.vue';
 import lessonsData from '../../assets/Lessones.json';
 import User from '../models/User';
-import Conter from './Conter.vue';
+
 
 export default {
   components: {
     Pjano,
     Question,
     Info,
-    Conter
 
   },
 
@@ -68,8 +67,11 @@ export default {
         this.backgroundColor = 'red'
         this.conter = this.conter +1  
         if(this.conter===2){
-          this.display.push(this.note + ", " +this.display[0])
-          console.log(this.display)
+          if(this.display[0]===undefined){
+            this.display[0]=this.note
+          }else{
+            this.display[0]=(this.display[0]+ ", " +this.note)
+          }
         }
       }
     },
@@ -164,7 +166,7 @@ export default {
 <template>
   <div class="play-container">
     <div class="question-checkbox-container">
-      <Question class="question" v-if="!freePlay" :chords="note" :chordsname="chordName" :feedback="answer"
+      <Question class="question" v-if="!freePlay" :chords="note" :chordsname="chordName" :feedback="answer" :result="display"
         :color="backgroundColor" :displayAgainBtn="tryAgainBtn" />
       <b-form-checkbox class="show-notes" v-model="checked" name="check-button" switch>
         Show notes
