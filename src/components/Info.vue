@@ -12,9 +12,6 @@ export default {
       facts: lessonsData.lessons[this.$route.params.id - 1]
     }
   },
-  props: {
-
-  },
 
   methods: {
     displayNone() {

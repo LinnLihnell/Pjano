@@ -6,7 +6,7 @@ export default {
         return {
             route: this.$route,
             showNavbar: true,
-            windowWidth: window.innerWidth // Initialize window width
+            windowWidth: window.innerWidth 
         }
     },
     watch: {
