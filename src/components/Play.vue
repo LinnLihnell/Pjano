@@ -34,6 +34,8 @@ export default {
       questionsWidth: 0,
       showNotesWidth: 0,
       questionCheckboxHeight: 0,
+      conter: 0,
+      display:[],
     }
   },
 
@@ -59,10 +61,16 @@ export default {
         this.answer = 'Well done!'
         this.nextLesson()
         this.backgroundColor = '#f5f5f5'
+        this.conter = 0
       } else {
         console.log("fel")
         this.answer = 'Try again'
         this.backgroundColor = 'red'
+        this.conter = this.conter +1  
+        if(this.conter===2){
+          this.display.push(this.note + ", " +this.display[0])
+          console.log(this.display)
+        }
       }
     },
     // nextLesson(){
