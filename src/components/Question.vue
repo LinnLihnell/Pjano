@@ -43,7 +43,7 @@ export default {
       <p v-if="chordsname !== null">Play chord: {{ chordsname }}</p>
       <p v-if="!displayAgainBtn">Next: Press {{ chords }}</p>
       <p v-if="displayAgainBtn">Try another lesson?</p>
-      <p v-if="displayAgainBtn">{{ result[0] }}</p>
+      <p v-if="displayAgainBtn">practice more {{ result[0] }}</p>
     </div>
     <div class="navButtons">
       <BButton @click="$router.push({ path: '/' })" variant="outline-secondary">Home<i class="bi bi-box-arrow-left"></i>
