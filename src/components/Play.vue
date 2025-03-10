@@ -68,7 +68,7 @@ export default {
         this.conter = this.conter +1  
         if(this.conter===2){
           if(this.display[0]===undefined){
-            this.display[0]=this.note
+            this.display[0]="practice more " +this.note
           }else{
             this.display[0]=(this.display[0]+ ", " +this.note)
           }
