@@ -35,13 +35,13 @@ export default {
       }
       this.$emit('playTone', value)
     },
+    
     emittedQuestion(question) {
       this.currentQuestion.push(question)
-      console.log('fråga mottagen')
     },
+
     calculateKeysSize() {
       this.screenWidth = window.innerWidth < 1000 ? window.innerWidth : 1000;
-      console.log('Screen width:', this.screenWidth);
       this.whiteKeySize = this.screenWidth / 7;
       this.blackKeySize = this.whiteKeySize / 2;
       this.blackKeyMargin = - this.blackKeySize / 2;

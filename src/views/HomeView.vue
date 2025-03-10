@@ -1,6 +1,4 @@
 <script>
-// import Pjano from '../components/Pjano.vue';
-// import Question from '../components/Question.vue';
 import Play from '../components/Play.vue';
 
 export default {
@@ -16,20 +14,12 @@ export default {
       isReturningUser:false
     }
   }
-//  methods:{
-//   userHistory(){
-//     if(value === undefined){
-//     value= "id för första lesone"
-//     }
 
-//   }
-//  }
  }
 
 </script>
 
 <template>
-  <!-- <Play/> -->
 <div id="homecontainer">
   <div id="welcome-card">
     <h1>Welcome to Pjano!</h1>

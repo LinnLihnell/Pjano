@@ -39,9 +39,6 @@ export default {
   },
 
   created() {
-    console.log(this.$route.params.id)
-    console.log(lessonsData)
-    console.log(lessonsData.lessons[this.$route.params.id - 1].chords[this.i - 1])
     if (this.user.progress[this.lessonID] !== undefined) {
       this.user.progress[this.lessonID] += 25;
     }
@@ -54,18 +51,15 @@ export default {
   methods: {
     emittedTone(value) {
       this.clickedNote.push(value)
-      console.log("du tryckte på:", value)
       if (value === this.note) {
-        console.log("rätt")
         this.answer = 'Well done!'
         this.nextLesson()
         this.backgroundColor = '#f5f5f5'
         this.conter = 0
       } else {
-        console.log("fel")
         this.answer = 'Try again'
         this.backgroundColor = 'red'
-        this.conter = this.conter +1  
+        this.conter = this.conter +1
         if(this.conter===2){
           if(this.display[0]===undefined){
             this.display[0]="practice more " +this.note
@@ -75,39 +69,7 @@ export default {
         }
       }
     },
-    // nextLesson(){
-    //   const lesson= lessonsData.lessons[this.$route.params.id -1]
 
-    //   if (lesson.chordname && lesson.chordname[this.x]){
-    //     this.chordName = lesson.chordname[this.x]
-    //   } else{
-    //     this.chordName = null
-    //   }
-    //   if(this.x<lesson.chords.length){
-    //     if(this.i<lesson.chords[this.x].length){
-    //       this.note = lesson.chords[this.x][this.i]
-    //       this.i++
-    //     } else {
-    //       this.i =0
-    //       this.x++
-    //       if(lesson.chordname && lesson.chordname[this.x]){
-    //         this.chordName = lesson.chordname[this.x]
-    //       } else {
-    //         this.chordName =null
-    //       }
-    //       // this.chordName = lesson.chordname[this.x]
-    //       // lessonsData.lessons[this.$route.params.id - 1].chordname[this.x]
-    //       if(this.x >= lesson.chords.length){
-    //         this.note = lesson.chords[this.x][this.i]
-    //         this.i++
-    //       } else {
-    //         this.answer = 'Lesson finished'
-    //         this.tryAgainBtn = true
-    //         // this.chordName=null
-    //       }
-    //     }
-    //   }
-    // }
     nextLesson() {
       {
         if (this.x < lessonsData.lessons[this.$route.params.id - 1].chords.length) {
@@ -130,7 +92,6 @@ export default {
               let lessonsCount = parseInt(localStorage.getItem('lessonsCount') || '0')
               lessonsCount += 1
               localStorage.setItem('lessonsCount', lessonsCount)
-              console.log("Lessons count: ", lessonsCount)
 
               this.chordName = null
 

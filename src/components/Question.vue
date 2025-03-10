@@ -12,11 +12,6 @@ export default {
     chordsname: {
       type: String,
       required: false,
-      // default:""
-      // validator: function(value){
-      //   return value && value.length > 0
-      // },
-
 
     },
     feedback: {
