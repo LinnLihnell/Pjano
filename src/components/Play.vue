@@ -34,7 +34,7 @@ export default {
       showNotesWidth: 0,
       questionCheckboxHeight: 0,
       conter: 0,
-      display:[],
+      display:"",
     }
   },
 
@@ -61,10 +61,10 @@ export default {
         this.backgroundColor = 'red'
         this.conter = this.conter +1
         if(this.conter===2){
-          if(this.display[0]===undefined){
-            this.display[0]="practice more " +this.note
+          if(this.display===""){
+            this.display="practice more " +this.note
           }else{
-            this.display[0]=(this.display[0]+ ", " +this.note)
+            this.display=this.display+ ", " +this.note
           }
         }
       }
