@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
+    "gh-pages": "^6.3.0",
     "unplugin-vue-components": "^28.4.1",
     "vite": "^6.0.5"
   },
@@ -15,7 +16,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "version": "0.0.0",
   "type": "module"
